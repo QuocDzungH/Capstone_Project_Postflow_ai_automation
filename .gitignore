@@ -1,0 +1,66 @@
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.claude/
+.codex/
+.vscode/
+.idea/
+
+# Python and generated files
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+node_modules/
+.DS_Store
+Thumbs.db
+*.log
+
+# Runtime orders and model weights
+*.db
+*.db-*
+*.sqlite*
+*.pt
+*.pth
+*.onnx
+*.safetensors
+model/*
+!model/README.md
+Knowledge_base/
+backend/data/qr_payment.jpg
+
+# Raw datasets, archives and local demos
+data/raw/
+experiments/classification/dataset/train/
+experiments/classification/dataset/valid/
+experiments/classification/dataset/test/
+experiments/label_detection/dataset/train/
+experiments/label_detection/dataset/valid/
+experiments/label_detection/dataset/test/
+experiments/label_detection/stage2_dataset/train/
+experiments/label_detection/stage2_dataset/valid/
+experiments/label_detection/stage2_dataset/test/
+experiments/**/runs/
+media/videos/
+*.mp4
+*.mov
+*.MOV
+*.zip
+*.rar
+
+# LaTeX build output
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.out
+*.toc
+*.lof
+*.lot
+*.synctex.gz

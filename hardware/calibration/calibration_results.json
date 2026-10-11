@@ -1,0 +1,49 @@
+{
+  "source_workbook": "data.xlsx",
+  "sheet": "Calibration",
+  "train_samples": 8800,
+  "test_samples": 900,
+  "held_out_distances_cm": [
+    11,
+    21,
+    31,
+    41,
+    51,
+    61,
+    71,
+    81,
+    91
+  ],
+  "sensors": [
+    {
+      "sensor": "CB1",
+      "coefficient": 1.0018398551421166,
+      "intercept": 0.7862483476970752,
+      "mae_before_cm": 0.937222222222223,
+      "mae_after_cm": 0.23630072637692426,
+      "rmse_after_cm": 0.28519555106358574,
+      "mape_after_pct": 0.5266989513403468,
+      "mae_improvement_pct": 74.7871187031142
+    },
+    {
+      "sensor": "CB2",
+      "coefficient": 1.0019437395832826,
+      "intercept": 1.5847738351462652,
+      "mae_before_cm": 1.8958888888888885,
+      "mae_after_cm": 0.44519266154870113,
+      "rmse_after_cm": 0.577212420546613,
+      "mape_after_pct": 1.2643245973364807,
+      "mae_improvement_pct": 76.5179982773351
+    },
+    {
+      "sensor": "CB3",
+      "coefficient": 1.0033234612974884,
+      "intercept": 1.5079332543949064,
+      "mae_before_cm": 2.104666666666667,
+      "mae_after_cm": 0.5986273414721651,
+      "rmse_after_cm": 0.6467951088635436,
+      "mape_after_pct": 1.9374033187720014,
+      "mae_improvement_pct": 71.55714247043878
+    }
+  ]
+}

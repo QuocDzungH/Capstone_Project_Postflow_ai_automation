@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 3
+names: ['Lable-Box', 'Lable-envelope', 'Lable-info']
+
+roboflow:
+  workspace: nhat-minh-bui
+  project: lable-box
+  version: 4
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/nhat-minh-bui/lable-box/dataset/4

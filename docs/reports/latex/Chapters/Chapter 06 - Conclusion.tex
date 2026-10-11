@@ -1,0 +1,22 @@
+\chapter{Conclusion}
+\label{chap:conclusion}
+
+\section{Summary of Achievements}
+
+Postal item acceptance at the counter currently depends on many manual operations, such as entering customer information, weighing, measuring dimensions and calculating the fee. This makes a transaction take about 6--8 minutes and can lead to data-entry errors. The project therefore built a system that combines artificial intelligence with low-cost sensors in order to automate part of this workflow.
+
+The system supports item classification, information extraction, dimension measurement, volume estimation and fee calculation. YOLO11n is used to classify parcels and envelopes and to detect the information region on parcels. EasyOCR detects the text regions and a fine-tuned TrOCR recognizes Vietnamese handwriting. Parcel dimensions are determined by one of two methods: webcams combined with YOLO and Canny edge detection, or three ultrasonic sensors connected to an ESP32 together with a temperature sensor.
+
+The results show that the item classification model and the information region detection model reach an mAP@50 of 99.50\% and 97.90\% respectively. TrOCR achieves a character error rate of 5.39\% and a word error rate of 14.99\%. With the webcam method, the volume errors on the three test samples are 0.31\%, 0.19\% and 1.02\%. With the ultrasonic method, the mean absolute error of the three sensors lies between 0.9016 and 1.7445\,cm. The fee calculation module also matches manual computation in every test case.
+
+Overall, the project has built the core components of a system supporting postal item acceptance. The results show that combining AI models with low-cost equipment is feasible under test conditions. However, because the complete system has not been evaluated at a post office counter, the project does not yet have sufficient grounds to conclude that it can shorten transaction time or reduce manual data entry in practice.
+
+\section{Limitations and Future Work}
+
+The data available to the project is limited. The Postal Item Dataset contains only 439 images and therefore does not fully cover the range of postal item types, object orientations and environmental conditions. Viet-Handwriting-OCR-v2 was not built specifically for postal shipping forms, and training did not apply augmentation. The ability to recognize slanted handwriting, smudged ink, uneven lighting or low-quality images has therefore not been fully assessed.
+
+The dimension measurement methods are also affected by the test conditions. The webcam method depends on lighting, background, camera placement, parcel orientation and occlusion by the hand. The volume error was evaluated on only three samples, so it is not highly representative. The ultrasonic method can be disturbed by objects or surfaces near the wave propagation area, and each sensor has a different error level and needs to be calibrated individually.
+
+In addition, the components have mainly been tested in isolation rather than evaluated end to end. The system is not connected to an electronic scale, the operational software or the official tariff table, and it has not been tested directly at a post office counter. The stability and real-world effectiveness of the system therefore remain undetermined.
+
+In future work, the data needs to be expanded with a wider range of postal item types, orientations, lighting conditions and occlusion cases. The OCR data should include images of real shipping forms and apply augmentation. Both measurement methods need to be evaluated on more parcels within a standardized measurement area; for the ultrasonic method in particular, calibration should continue and a mechanism for discarding anomalous measurements should be added. Finally, the components need to be integrated with an electronic scale, the operational software and the official tariff table so that the complete workflow can be tested at a post office. Those results would provide a more reliable basis for assessing whether the system can be deployed in practice.

@@ -1,0 +1,223 @@
+\clearpage
+\phantomsection
+\addcontentsline{toc}{chapter}{Appendices}
+\chapter*{Appendices}
+
+\noindent The two sources cited as \mbox{[19]} and \mbox{[20]} are internal working documents of Quang Ninh Provincial Post Office and are not publicly available. These appendices therefore reproduce the business rules and tariff tables that the report draws on, so that every claim supported by \mbox{[19]--[20]} can be checked without access to the original files. All content is presented in English; service codes and Vietnamese place names are kept in their original form because they are identifiers.
+
+\vspace{1em}
+
+\section*{Appendix A. Business Rules from the Omni Channel Knowledge Base [19]}
+\phantomsection
+\addcontentsline{toc}{section}{Appendix A. Business Rules from the Omni Channel Knowledge Base [19]}
+
+\noindent \textbf{Source.} Quang Ninh Provincial Post Office, ``Knowledge Base bản update Omni Channel'', internal spreadsheet, 2026.
+
+\noindent \textbf{Cited in.} Section~\ref{sec:algorithm_description}, in the fee-calculation pipeline: province zones, route determination and the volumetric weight rule.
+
+\subsection*{A.1 Charging zones}
+
+\begin{itemize}
+    \item \textbf{Zone 1} --- 28 northern provinces and cities: Bắc Kạn, Bắc Giang, Bắc Ninh, Cao Bằng, Điện Biên, Hà Nội, Hà Giang, Hà Nam, Hà Tĩnh, Hải Dương, Hải Phòng, Hưng Yên, Hòa Bình, Lào Cai, Lai Châu, Lạng Sơn, Nam Định, Nghệ An, Ninh Bình, Phú Thọ, Quảng Ninh, Sơn La, Thái Bình, Thái Nguyên, Thanh Hóa, Tuyên Quang, Vĩnh Phúc, Yên Bái.
+
+    \item \textbf{Zone 2} --- 25 southern and central provinces and cities: An Giang, Bình Dương, Bình Phước, Bà Rịa Vũng Tàu, Bạc Liêu, Bến Tre, Bình Thuận, Cà Mau, Cần Thơ, Đồng Nai, Đồng Tháp, TP. HCM, Hậu Giang, Kiên Giang, Khánh Hòa, Long An, Lâm Đồng, Ninh Thuận, Sóc Trăng, Tây Ninh, Tiền Giang, Trà Vinh, Vĩnh Long, Đắk Lắk, Đắk Nông.
+
+    \item \textbf{Zone 3} --- 10 central provinces and cities: Bình Định, Đà Nẵng, Gia Lai, Thừa Thiên Huế, Kon Tum, Phú Yên, Quảng Trị, Quảng Nam, Quảng Ngãi, Quảng Bình.
+\end{itemize}
+
+\noindent Zone 3 is the list that determines the near-zone case for CTN001 in Section~\ref{sec:algorithm_description}.
+
+\subsection*{A.2 EMS route groups}
+
+\noindent The EMS entry defines the five route groups that are implemented for the ETN service family. Tariffs are quoted in VND, excluding VAT (8\%), fuel surcharge and remote-area surcharge.
+
+\begin{table}[H]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lrrrrr}
+\hline
+\textbf{Weight tier} & \textbf{Intra-} & \textbf{Intra-} & \textbf{Đà Nẵng $\leftrightarrow$} & \textbf{Hà Nội $\leftrightarrow$} & \textbf{Inter-} \\
+ & \textbf{province} & \textbf{zone} & \textbf{Hà Nội, TP.HCM} & \textbf{TP.HCM} & \textbf{zone} \\
+\hline
+Up to 50 g & 8,000 & 9,500 & 10,500 & 10,500 & 11,000 \\
+Over 50--100 g & 8,000 & 13,500 & 14,500 & 14,500 & 15,000 \\
+Over 100--250 g & 10,000 & 17,500 & 23,000 & 23,500 & 24,500 \\
+Over 250--500 g & 12,500 & 25,000 & 29,500 & 30,500 & 31,500 \\
+Over 500--1,000 g & 15,000 & 35,000 & 43,000 & 44,000 & 46,000 \\
+Over 1,000--1,500 g & 18,000 & 42,000 & 55,500 & 57,000 & 59,500 \\
+Over 1,500--2,000 g & 21,000 & 51,000 & 62,500 & 67,000 & 71,000 \\
+\hline
+\end{tabular}
+\end{table}
+
+\noindent Delivery-time targets given in the same entry: intra-province in Hà Nội and TP.HCM, 0.5 day; intra-province elsewhere, 1 day; intra-zone, 0.5--1 day; Hà Nội $\leftrightarrow$ TP.HCM, 0.5--1 day; near-zone, 1--2 days; far-zone excluding Hà Nội--TP.HCM, 2--2.5 days.
+
+\subsection*{A.3 Scope of the CTN001 service}
+
+\noindent Traditional standard delivery (service code CTN001) carries goods or certain special goods without cash-on-delivery; each item is given a tracking number for monitoring and locating during transport. Its scope covers items sent intra-province, intra-zone, near-zone and far-zone.
+
+\noindent This is the source of the four-route structure used for CTN001 in Section~\ref{sec:algorithm_description}, as opposed to the five-route structure of the ETN group.
+
+\subsection*{A.4 Volumetric weight rule}
+
+\noindent Volumetric conversion is applied to determine the chargeable weight for every item whose longest edge exceeds 50\,cm. The chargeable weight is the greater of the actual weight and the volumetric weight: if the volumetric weight exceeds the actual weight, the volumetric weight is charged; otherwise the actual weight is charged. The two conversion formulas are
+
+\[ \text{Volumetric weight (kg)} = \frac{L \times W \times H}{6{,}000}
+   \qquad\text{and}\qquad
+   \text{Volumetric weight (kg)} = \frac{L \times W \times 200}{6{,}000} \]
+
+\noindent with all dimensions in centimetres. The second form applies to non-stackable goods, whose height is fixed at 200\,cm.
+
+\noindent This entry is the source of both the 50\,cm threshold and the divisor of 6,000 used in Section~\ref{sec:algorithm_description}, Step~3. The non-stackable variant is documented here for completeness; the prototype implements only the stackable formula.
+
+\section*{Appendix B. 2026 Tariff Data [20]}
+\phantomsection
+\addcontentsline{toc}{section}{Appendix B. 2026 Tariff Data [20]}
+
+\noindent \textbf{Source.} Quang Ninh Provincial Post Office, ``DV Cước 2026'', internal spreadsheet, 2026.
+
+\noindent \textbf{Cited in.} Section~\ref{sec:algorithm_description}, for the base prices, weight tiers and excess-unit prices loaded into the fee-calculation module; and Section~\ref{sec:quantitative}, for the expected values of the fee-calculation test cases.
+
+\noindent Only the four service tables actually loaded into the module are reproduced. All values are in VND. Figures are shown with the decimal point in English convention; the source uses the Vietnamese convention, in which a comma marks the decimal place.
+
+\subsection*{B.1 ETN001}
+
+\begin{table}[H]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lrrrrr}
+\hline
+\textbf{Weight tier} & \textbf{Intra-} & \textbf{Intra-} & \textbf{Đà Nẵng $\leftrightarrow$} & \textbf{Hà Nội $\leftrightarrow$} & \textbf{Inter-} \\
+ & \textbf{province} & \textbf{zone} & \textbf{Hà Nội, TP.HCM} & \textbf{TP.HCM} & \textbf{zone} \\
+\hline
+Up to 50 g & 8,000 & 9,500 & 10,500 & 10,500 & 11,000 \\
+Over 50--100 g & 8,000 & 13,500 & 14,500 & 14,500 & 15,000 \\
+Over 100--250 g & 10,000 & 17,500 & 23,000 & 23,500 & 24,500 \\
+Over 250--500 g & 12,500 & 25,000 & 29,500 & 30,500 & 31,500 \\
+Over 500--1,000 g & 15,000 & 35,000 & 43,000 & 44,000 & 46,000 \\
+Over 1,000--1,500 g & 18,000 & 42,000 & 55,500 & 57,000 & 59,500 \\
+Over 1,500--2,000 g & 21,000 & 51,000 & 62,500 & 67,000 & 71,000 \\
+\hline
+\end{tabular}
+\end{table}
+
+\noindent A note in the source table states that letter mail (LETTER) is treated as 50\,g by default and does not require dimension measurement. This is why the module accepts LETTER without a volumetric weight step.
+
+\subsection*{B.2 ETN011}
+
+\begin{table}[H]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lrrrrr}
+\hline
+\textbf{Weight tier} & \textbf{Intra-} & \textbf{Intra-} & \textbf{Đà Nẵng $\leftrightarrow$} & \textbf{Hà Nội $\leftrightarrow$} & \textbf{Inter-} \\
+ & \textbf{province} & \textbf{zone} & \textbf{Hà Nội, TP.HCM} & \textbf{TP.HCM} & \textbf{zone} \\
+\hline
+Each additional 500 g & 1,600 & 4,000 & 9,500 & 10,500 & 12,000 \\
+\hline
+Up to 50 g & 8,000 & 9,500 & 10,500 & 10,500 & 11,000 \\
+Over 50--100 g & 8,000 & 13,500 & 14,500 & 14,500 & 15,000 \\
+Over 100--250 g & 10,000 & 17,500 & 23,000 & 23,500 & 24,500 \\
+Over 250--500 g & 12,500 & 25,000 & 29,500 & 30,500 & 31,500 \\
+Over 500--1,000 g & 15,000 & 35,000 & 43,000 & 44,000 & 46,000 \\
+Over 1,000--1,500 g & 18,000 & 42,000 & 55,500 & 57,000 & 59,500 \\
+Over 1,500--2,000 g & 21,000 & 51,000 & 62,500 & 67,000 & 71,000 \\
+2,500 g & 22,600 & 55,000 & 72,000 & 77,500 & 83,000 \\
+3,000 g & 24,200 & 59,000 & 81,500 & 88,000 & 95,000 \\
+\hline
+\end{tabular}
+\end{table}
+
+\noindent The first row is the surcharge per additional 500\,g, which the module reads as \texttt{unit\_grams} $=500$ together with the corresponding unit price.
+
+\subsection*{B.3 ETN013}
+
+\begin{table}[H]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lrrrrr}
+\hline
+\textbf{Weight tier} & \textbf{Intra-} & \textbf{Intra-} & \textbf{Đà Nẵng $\leftrightarrow$} & \textbf{Hà Nội $\leftrightarrow$} & \textbf{Inter-} \\
+ & \textbf{province} & \textbf{zone} & \textbf{Hà Nội, TP.HCM} & \textbf{TP.HCM} & \textbf{zone} \\
+\hline
+Each additional 500 g & 5,000 & 7,000 & 10,000 & 12,000 & 15,000 \\
+\hline
+Up to 2,000 g & 50,000 & 70,000 & 85,000 & 100,000 & 110,000 \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection*{B.4 CTN001}
+
+\begin{table}[H]
+\centering
+\small
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{lrrrr}
+\hline
+\textbf{Weight tier} & \textbf{Intra-province} & \textbf{Intra-zone} & \textbf{Near-zone} & \textbf{Far-zone} \\
+\hline
+Up to 50 g & 9,266.40 & 9,266.40 & 10,692.00 & 11,404.80 \\
+Over 50--100 g & 9,979.20 & 10,692.00 & 11,404.80 & 12,117.60 \\
+Over 100--250 g & 12,830.40 & 13,115.52 & 13,543.20 & 17,820.00 \\
+Over 250--500 g & 15,681.60 & 19,958.40 & 22,096.80 & 24,235.20 \\
+Over 500--1,000 g & 21,098.88 & 33,501.60 & 35,640.00 & 37,065.60 \\
+Over 1,000--1,500 g & 28,797.12 & 38,491.20 & 42,055.20 & 43,480.80 \\
+Over 1,500--2,000 g & 30,507.84 & 45,334.08 & 46,332.00 & 47,757.60 \\
+Each additional 1 kg, 2--30 kg & 4,134.24 & 5,132.16 & 6,985.44 & 8,553.60 \\
+Each additional 1 kg, 30--100 kg & 3,706.56 & 4,847.04 & 6,557.76 & 8,268.48 \\
+Each additional 1 kg, 100--1,000 kg & 3,136.32 & 3,991.68 & 4,989.60 & 6,842.88 \\
+Each additional 1 kg, over 1,000 kg & 2,280.96 & 2,993.76 & 3,991.68 & 5,987.52 \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection*{B.5 Routes defined for each service}
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{lp{9.4cm}}
+\hline
+\textbf{Service} & \textbf{Routes defined in the source} \\
+\hline
+ETN001 & Intra-province; intra-zone; Đà Nẵng to Hà Nội and TP.HCM and the reverse; Hà Nội to TP.HCM and the reverse; inter-zone \\
+ETN011 & Intra-province; intra-zone; Đà Nẵng to Hà Nội and TP.HCM and the reverse; Hà Nội to TP.HCM and the reverse; inter-zone \\
+ETN013 & Intra-province; intra-zone; Đà Nẵng to Hà Nội and TP.HCM and the reverse; Hà Nội to TP.HCM and the reverse; inter-zone \\
+CTN001 & Intra-province; intra-zone; near-zone; far-zone \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection*{B.6 Values supporting the fee-calculation test cases}
+
+\noindent The expected values in Table~\ref{tab:feetest} are derived from the following entries, all on the intra-province route.
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{llr}
+\hline
+\textbf{Test case} & \textbf{Tariff entry used} & \textbf{Value} \\
+\hline
+ETN011, 750 g & Over 500--1,000 g & 15,000 \\
+\hline
+ETN011, 3,000 g & Over 1,500--2,000 g & 21,000 \\
+ & Each additional 500 g & 1,600 \\
+ & 3,000 g, published total & 24,200 \\
+\hline
+CTN001, 5,000 g & Over 1,500--2,000 g & 30,507.84 \\
+ & Each additional 1 kg, 2--30 kg & 4,134.24 \\
+\hline
+\end{tabular}
+\end{table}
+
+\noindent The corresponding computations are
+\[ 21{,}000 + 2 \times 1{,}600 = 24{,}200 \text{ VND} \]
+for the 3,000\,g ETN011 case, and
+\[ 30{,}507.84 + 3 \times 4{,}134.24 = 42{,}910.56 \text{ VND} \]
+for the 5,000\,g CTN001 case, which match the values reported in Table~\ref{tab:feetest}.

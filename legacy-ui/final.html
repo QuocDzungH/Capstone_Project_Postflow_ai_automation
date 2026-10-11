@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PostFlow - Nhập Thông Tin</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .container {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+      max-width: 600px;
+      width: 100%;
+      padding: 40px;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .header h1 {
+      font-size: 28px;
+      color: #333;
+      margin-bottom: 10px;
+    }
+    .header p {
+      color: #666;
+      font-size: 14px;
+    }
+    .section {
+      margin-bottom: 30px;
+      padding: 20px;
+      background: #f9f9f9;
+      border-radius: 8px;
+      border: 2px dashed #2196F3;
+    }
+    .section-title {
+      color: #2196F3;
+      font-weight: bold;
+      margin-bottom: 15px;
+      font-size: 16px;
+    }
+    .upload-box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+    button {
+      background: #2196F3;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 14px;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background: #1976D2;
+    }
+    button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+    input[type="file"] {
+      display: none;
+    }
+    .file-label {
+      display: inline-block;
+      background: #f0f0f0;
+      padding: 10px 15px;
+      border-radius: 6px;
+      cursor: pointer;
+      border: 1px solid #ddd;
+      font-size: 14px;
+    }
+    .file-label:hover {
+      background: #e0e0e0;
+    }
+    .status {
+      font-size: 13px;
+      color: #666;
+      margin-top: 10px;
+    }
+    .status.success {
+      color: #4caf50;
+    }
+    .status.error {
+      color: #f44336;
+    }
+    .loading {
+      display: none;
+      text-align: center;
+      color: #ff9800;
+      font-weight: bold;
+      margin: 15px 0;
+    }
+    .loading.show {
+      display: block;
+    }
+    .form-section {
+      display: none;
+    }
+    .form-section.show {
+      display: block;
+    }
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin-bottom: 15px;
+    }
+    .form-grid.full {
+      grid-template-columns: 1fr;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+    label {
+      font-weight: 500;
+      margin-bottom: 6px;
+      color: #333;
+      font-size: 14px;
+    }
+    input[type="text"],
+    input[type="tel"],
+    select,
+    textarea {
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 14px;
+    }
+    input[type="text"]:focus,
+    input[type="tel"]:focus,
+    select:focus,
+    textarea:focus {
+      outline: none;
+      border-color: #2196F3;
+      box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.1);
+    }
+    textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+    .submit-btn {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      margin-top: 20px;
+    }
+    .required {
+      color: #f44336;
+    }
+    .error-message {
+      background: #ffebee;
+      color: #f44336;
+      padding: 12px;
+      border-radius: 6px;
+      margin-bottom: 15px;
+      display: none;
+      border-left: 4px solid #f44336;
+    }
+    .error-message.show {
+      display: block;
+    }
+    .payment-method-btn {
+      background: white;
+      border: 2px solid #e0e0e0;
+      padding: 15px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: all 0.3s;
+      color: #333;
+      font-family: inherit;
+      font-weight: 500;
+    }
+    .payment-method-btn:hover {
+      border-color: #2196F3;
+      background: #f0f7ff;
+    }
+    .payment-method-btn.active {
+      background: #2196F3;
+      color: white;
+      border-color: #2196F3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>📮 PostFlow</h1>
+      <p>Hệ thống gửi bưu phẩm thông minh</p>
+    </div>
+
+    <!-- Step 1: Upload Document -->
+    <div class="section" id="uploadSection">
+      <div class="section-title">Bước 1: Tải phiếu gửi</div>
+
+      <!-- Camera or File input -->
+      <div id="cameraOffMode" style="display: block;">
+        <div class="upload-box">
+          <label class="file-label" for="docImage">📁 Chọn ảnh</label>
+          <input type="file" id="docImage" accept="image/*">
+          <button type="button" onclick="startCamera()">📸 Chụp</button>
+        </div>
+      </div>
+
+      <!-- Camera stream -->
+      <div id="cameraOnMode" style="display: none;">
+        <div style="background: #000; border-radius: 8px; overflow: hidden; margin-bottom: 15px;">
+          <video id="cameraStream" style="width: 100%; height: auto; display: block;"></video>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+          <button type="button" class="submit-btn" onclick="capturePhoto()" style="padding: 10px; margin: 0;">📸 Chụp ảnh</button>
+          <button type="button" class="submit-btn" style="padding: 10px; margin: 0; background: #666;" onclick="stopCamera()">✕ Hủy</button>
+        </div>
+      </div>
+
+      <div class="status" id="uploadStatus"></div>
+      <div class="loading" id="uploadLoading">⏳ Đang xử lý ảnh...</div>
+    </div>
+
+    <!-- Error Message -->
+    <div class="error-message" id="errorMessage"></div>
+
+    <!-- Step 2: Fill Form -->
+    <div class="section form-section" id="formSection">
+      <div class="section-title">Bước 2: Thông tin khách hàng</div>
+
+      <form id="customerForm" onsubmit="handleSubmit(event)">
+        <!-- Sender Info -->
+        <div style="margin-bottom: 20px;">
+          <h3 style="color: #333; font-size: 14px; margin-bottom: 15px;">👤 Người gửi <span class="required">*</span></h3>
+          <div class="form-grid">
+            <div class="form-group">
+              <label>Tên</label>
+              <input type="text" name="sender_name" required>
+            </div>
+            <div class="form-group">
+              <label>SĐT</label>
+              <input type="tel" name="sender_phone" required>
+            </div>
+            <div class="form-group">
+              <label>Tỉnh/Thành</label>
+              <input type="text" name="sender_province" required>
+            </div>
+            <div class="form-group">
+              <label>Phường/Xã</label>
+              <input type="text" name="sender_ward" required>
+            </div>
+            <div class="form-group full">
+              <label>Địa chỉ chi tiết</label>
+              <input type="text" name="sender_address" required>
+            </div>
+          </div>
+        </div>
+
+        <!-- Receiver Info -->
+        <div style="margin-bottom: 20px;">
+          <h3 style="color: #333; font-size: 14px; margin-bottom: 15px;">👤 Người nhận <span class="required">*</span></h3>
+          <div class="form-grid">
+            <div class="form-group">
+              <label>Tên</label>
+              <input type="text" name="receiver_name" required>
+            </div>
+            <div class="form-group">
+              <label>SĐT</label>
+              <input type="tel" name="receiver_phone" required>
+            </div>
+            <div class="form-group">
+              <label>Tỉnh/Thành</label>
+              <input type="text" name="receiver_province" required>
+            </div>
+            <div class="form-group">
+              <label>Phường/Xã</label>
+              <input type="text" name="receiver_ward" required>
+            </div>
+            <div class="form-group full">
+              <label>Địa chỉ chi tiết</label>
+              <input type="text" name="receiver_address" required>
+            </div>
+          </div>
+        </div>
+
+        <!-- Package Info -->
+        <div style="margin-bottom: 20px;">
+          <h3 style="color: #333; font-size: 14px; margin-bottom: 15px;">📦 Nội dung bưu gửi <span class="required">*</span></h3>
+          <div class="form-grid full">
+            <div class="form-group">
+              <label>Mô tả hàng hóa</label>
+              <textarea name="item_description" required></textarea>
+            </div>
+            <div class="form-group">
+              <label>Dịch vụ</label>
+              <select name="service" required>
+                <option value="">-- Chọn dịch vụ --</option>
+                <option value="ETN011">Hàng hoá</option>
+                <option value="ETN013">Hoả tốc</option>
+                <option value="CTN001">Tiêu chuẩn</option>
+                <option value="ETN001">Tài liệu</option>
+                <option value="LETTER">Thư từ</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="submit-btn">→ Bước tiếp theo</button>
+      </form>
+      <div class="loading" id="formLoading">⏳ Đang xử lý...</div>
+    </div>
+
+    <!-- Step 3: Shipping & Payment -->
+    <div class="section form-section" id="shippingSection">
+      <div class="section-title">Bước 3: 💰 Thanh Toán</div>
+
+      <!-- Shipping Quote -->
+      <div style="background: #f0f7ff; padding: 15px; border-radius: 6px; margin-bottom: 20px; border-left: 4px solid #2196F3;">
+        <h3 style="color: #2196F3; margin-bottom: 15px; font-size: 14px;">📦 Thông tin vận chuyển</h3>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; font-size: 14px;">
+          <div>
+            <div style="color: #666; font-size: 12px;">Dịch vụ</div>
+            <div id="quoteService" style="font-weight: bold; color: #333;">-</div>
+          </div>
+          <div>
+            <div style="color: #666; font-size: 12px;">Tuyến đường</div>
+            <div id="quoteRoute" style="font-weight: bold; color: #333;">-</div>
+          </div>
+          <div>
+            <div style="color: #666; font-size: 12px;">Cân nặng chịu phí (kg)</div>
+            <div id="quoteWeight" style="font-weight: bold; color: #333;">-</div>
+          </div>
+          <div>
+            <div style="color: #666; font-size: 12px;">Thể tích (cm³)</div>
+            <div id="quoteVolume" style="font-weight: bold; color: #333;">-</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Amount -->
+      <div style="background: #e8f5e9; padding: 20px; border-radius: 6px; margin-bottom: 20px; text-align: center; border: 2px solid #4caf50;">
+        <div style="font-size: 13px; color: #666; margin-bottom: 10px;">Tổng phí vận chuyển</div>
+        <div style="font-size: 36px; font-weight: bold; color: #2e7d32;" id="totalAmount">0 ₫</div>
+      </div>
+
+      <!-- Payment Method -->
+      <div style="margin-bottom: 20px;">
+        <h3 style="color: #333; margin-bottom: 15px; font-size: 14px;">💳 Chọn phương thức thanh toán</h3>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+          <button type="button" class="payment-method-btn active" onclick="selectPaymentMethod('bank')">
+            <div style="font-size: 24px;">🏦</div>
+            Chuyển khoản
+          </button>
+          <button type="button" class="payment-method-btn" onclick="selectPaymentMethod('cash')">
+            <div style="font-size: 24px;">💵</div>
+            Tiền mặt
+          </button>
+        </div>
+      </div>
+
+      <!-- Bank Transfer Section -->
+      <div id="bankSection" style="display: block;">
+        <div style="background: #fff3cd; padding: 15px; border-radius: 6px; margin-bottom: 15px; border-left: 4px solid #ff9800;">
+          <p style="font-size: 13px; color: #666; margin: 0;">Quét mã QR để chuyển khoản</p>
+        </div>
+        <div style="text-align: center; margin-bottom: 15px;">
+          <div id="qrcodeContainer" style="background: white; padding: 15px; border-radius: 6px; display: inline-block;">
+            <img id="qrcodeImage" src="" alt="QR Code" style="max-width: 250px;">
+          </div>
+        </div>
+        <div class="loading" id="qrcodeLoading" style="display: none;">⏳ Đang tạo mã QR...</div>
+        <button type="button" class="submit-btn" onclick="confirmBankPayment()">✅ Thanh toán thành công</button>
+      </div>
+
+      <!-- Cash Section -->
+      <div id="cashSection" style="display: none;">
+        <div style="background: #e8f5e9; padding: 15px; border-radius: 6px; margin-bottom: 15px; border-left: 4px solid #4caf50;">
+          <p style="font-size: 13px; color: #2e7d32;">Vui lòng thanh toán tiền mặt cho nhân viên</p>
+        </div>
+        <button type="button" class="submit-btn" onclick="confirmCashPayment()">✅ Xác nhận thanh toán</button>
+      </div>
+
+      <div class="loading" id="paymentLoading" style="display: none;">⏳ Đang tạo đơn hàng...</div>
+    </div>
+
+    <!-- Step 4: Tracking Code -->
+    <div class="section form-section" id="trackingSection" style="display: none;">
+      <div class="section-title">✅ Tạo đơn hàng thành công!</div>
+
+      <div style="background: #e8f5e9; padding: 20px; border-radius: 6px; margin-bottom: 20px; border: 2px solid #4caf50;">
+        <div style="font-size: 12px; color: #666; margin-bottom: 8px;">Mã vận đơn</div>
+        <div style="font-size: 28px; font-weight: bold; color: #2e7d32; font-family: monospace;" id="trackingCode">-</div>
+      </div>
+
+      <div style="text-align: center; margin-bottom: 20px;">
+        <img id="barcodeImage" src="" alt="Barcode" style="max-width: 300px;">
+      </div>
+
+      <button type="button" class="submit-btn" onclick="printOrder()">🖨️ In phiếu</button>
+      <button type="button" class="submit-btn" style="background: #666; margin-top: 10px;" onclick="startNewOrder()">↻ Tạo đơn mới</button>
+    </div>
+
+    <!-- Step 2: Ultrasonic Measurement -->
+    <div class="section form-section" id="ultrasonicSection">
+      <div class="section-title">Bước 2: 📡 Đo Kích Thước (Sóng Siêu Âm)</div>
+
+      <form id="ultrasonicForm" onsubmit="handleUltrasonicSubmit(event)">
+        <div style="margin-bottom: 15px;">
+          <p style="color: #666; font-size: 14px; margin-bottom: 15px;">Kết nối ESP32 để lấy số đo từ 3 cảm biến</p>
+          <div class="form-group">
+            <label>URL ESP32 (mặc định)</label>
+            <input type="text" id="esp32Url" value="http://esp32-buudien.local/distance" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px; font-size: 13px;">
+          </div>
+        </div>
+
+        <button type="button" class="submit-btn" style="margin-bottom: 15px;" onclick="fetchESP32Measurements()">🔄 Lấy số đo từ ESP32</button>
+
+        <div class="loading" id="esp32Loading">⏳ Đang kết nối ESP32...</div>
+
+        <div id="measurementFields" style="display: none;">
+          <div class="form-grid">
+            <div class="form-group">
+              <label>Chiều dài (cm)</label>
+              <input type="number" name="length_cm" id="length_cm" step="0.1" required>
+            </div>
+            <div class="form-group">
+              <label>Chiều rộng (cm)</label>
+              <input type="number" name="width_cm" id="width_cm" step="0.1" required>
+            </div>
+            <div class="form-group">
+              <label>Chiều cao (cm)</label>
+              <input type="number" name="height_cm" id="height_cm" step="0.1" required>
+            </div>
+            <div class="form-group">
+              <label>Cân nặng (kg)</label>
+              <input type="number" name="weight_kg" id="weight_kg" step="0.1" value="0" required>
+            </div>
+          </div>
+
+          <div id="volumeDisplay" style="display: none; background: #e8f5e9; padding: 15px; border-radius: 6px; margin: 15px 0; border-left: 4px solid #4caf50;">
+            <h3 style="color: #2e7d32; margin-bottom: 10px;">📦 Kết quả:</h3>
+            <div style="font-size: 14px; color: #333;">
+              <div>Thể tích: <strong id="volumeResult">0</strong> cm³</div>
+              <div style="margin-top: 5px;">Trạng thái: <strong id="volumeStatus">Chưa tính</strong></div>
+            </div>
+          </div>
+
+          <button type="submit" class="submit-btn">→ Bước tiếp theo</button>
+        </div>
+      </form>
+    </div>
+
+  </div>
+
+  <script>
+    const API = 'http://127.0.0.1:8000';
+    let cameraStream = null;
+
+    // File input handler
+    document.getElementById('docImage').addEventListener('change', (e) => {
+      if (e.target.files[0]) processImage(e.target.files[0]);
+    });
+
+    async function startCamera() {
+      try {
+        cameraStream = await navigator.mediaDevices.getUserMedia({
+          video: { facingMode: 'environment', width: { ideal: 1280 }, height: { ideal: 720 } }
+        });
+
+        const video = document.getElementById('cameraStream');
+        video.srcObject = cameraStream;
+        video.play();
+
+        document.getElementById('cameraOffMode').style.display = 'none';
+        document.getElementById('cameraOnMode').style.display = 'block';
+
+        const errorMsg = document.getElementById('errorMessage');
+        errorMsg.classList.remove('show');
+
+      } catch (e) {
+        const errorMsg = document.getElementById('errorMessage');
+        errorMsg.textContent = `❌ Không thể kết nối camera: ${e.message}`;
+        errorMsg.classList.add('show');
+      }
+    }
+
+    function stopCamera() {
+      if (cameraStream) {
+        cameraStream.getTracks().forEach(track => track.stop());
+        cameraStream = null;
+      }
+      document.getElementById('cameraOffMode').style.display = 'block';
+      document.getElementById('cameraOnMode').style.display = 'none';
+    }
+
+    function capturePhoto() {
+      const video = document.getElementById('cameraStream');
+      const canvas = document.createElement('canvas');
+      canvas.width = video.videoWidth;
+      canvas.height = video.videoHeight;
+      const ctx = canvas.getContext('2d');
+      ctx.drawImage(video, 0, 0);
+
+      canvas.toBlob((blob) => {
+        stopCamera();
+        processImage(blob);
+      }, 'image/jpeg', 0.95);
+    }
+
+    async function processImage(file) {
+      const uploadStatus = document.getElementById('uploadStatus');
+      const uploadLoading = document.getElementById('uploadLoading');
+      const errorMsg = document.getElementById('errorMessage');
+      const formSection = document.getElementById('formSection');
+
+      uploadStatus.textContent = '';
+      uploadLoading.classList.add('show');
+      errorMsg.classList.remove('show');
+
+      try {
+        const formData = new FormData();
+        formData.append('file', file);
+
+        // Use full pipeline endpoint: classify + crop + OCR
+        const res = await fetch(`${API}/process-document-full`, {method: 'POST', body: formData});
+        const data = await res.json();
+
+        if (!data.success) throw new Error(data.error || 'Lỗi xử lý ảnh');
+
+        // Show classification + extraction success
+        uploadStatus.textContent = `✅ Phân loại: ${data.service_type} | OCR: ${data.missing_fields.length} field thiếu`;
+        uploadStatus.classList.add('success');
+
+        // Auto-fill form with extracted data
+        document.querySelector('input[name="sender_name"]').value = data.sender_name;
+        document.querySelector('input[name="sender_phone"]').value = data.sender_phone;
+        document.querySelector('input[name="sender_province"]').value = data.sender_province;
+        document.querySelector('input[name="sender_ward"]').value = data.sender_ward;
+        document.querySelector('input[name="sender_address"]').value = data.sender_address;
+
+        document.querySelector('input[name="receiver_name"]').value = data.receiver_name;
+        document.querySelector('input[name="receiver_phone"]').value = data.receiver_phone;
+        document.querySelector('input[name="receiver_province"]').value = data.receiver_province;
+        document.querySelector('input[name="receiver_ward"]').value = data.receiver_ward;
+        document.querySelector('input[name="receiver_address"]').value = data.receiver_address;
+
+        document.querySelector('textarea[name="item_description"]').value = data.item_description;
+        document.querySelector('select[name="service"]').value = data.service_type === 'LETTER' ? 'LETTER' : 'ETN011';
+
+        // Show warning if fields are missing
+        if (data.missing_fields.length > 0) {
+          errorMsg.innerHTML = `⚠️ <strong>Một số trường thiếu:</strong><br>${data.missing_fields.join(', ')}<br><br>Vui lòng kiểm tra và sửa lại!`;
+          errorMsg.classList.add('show');
+          errorMsg.style.background = '#fff3cd';
+          errorMsg.style.borderLeftColor = '#ff9800';
+          errorMsg.style.color = '#856404';
+        }
+
+        formSection.classList.add('show');
+        window.scrollTo(0, document.getElementById('formSection').offsetTop - 50);
+
+      } catch (e) {
+        errorMsg.textContent = `❌ ${e.message}`;
+        errorMsg.classList.add('show');
+        uploadStatus.textContent = '';
+      } finally {
+        uploadLoading.classList.remove('show');
+      }
+    }
+
+    async function handleSubmit(e) {
+      e.preventDefault();
+      const formLoading = document.getElementById('formLoading');
+      const errorMsg = document.getElementById('errorMessage');
+      const boxSection = document.getElementById('boxSection');
+
+      formLoading.classList.add('show');
+      errorMsg.classList.remove('show');
+
+      try {
+        const formData = new FormData(document.getElementById('customerForm'));
+        const data = Object.fromEntries(formData);
+
+        // Show success and move to next section
+        errorMsg.innerHTML = `✅ <strong>Thông tin khách hàng đã lưu!</strong>`;
+        errorMsg.classList.add('show');
+        errorMsg.style.background = '#e8f5e9';
+        errorMsg.style.borderLeftColor = '#4caf50';
+        errorMsg.style.color = '#2e7d32';
+
+        // Store customer data in sessionStorage for later use
+        sessionStorage.setItem('customerData', JSON.stringify(data));
+
+        // Show ultrasonic measurement section
+        document.getElementById('ultrasonicSection').classList.add('show');
+        window.scrollTo(0, document.getElementById('ultrasonicSection').offsetTop - 50);
+
+      } catch (e) {
+        errorMsg.textContent = `❌ ${e.message}`;
+        errorMsg.classList.add('show');
+      } finally {
+        formLoading.classList.remove('show');
+      }
+    }
+
+
+    async function fetchESP32Measurements() {
+      const esp32Url = document.getElementById('esp32Url').value;
+      const esp32Loading = document.getElementById('esp32Loading');
+      const measurementFields = document.getElementById('measurementFields');
+      const errorMsg = document.getElementById('errorMessage');
+
+      if (!esp32Url.trim()) {
+        errorMsg.textContent = '❌ Vui lòng nhập URL ESP32';
+        errorMsg.classList.add('show');
+        return;
+      }
+
+      esp32Loading.style.display = 'block';
+      errorMsg.classList.remove('show');
+
+      try {
+        // Call backend endpoint to fetch from ESP32
+        const res = await fetch(`${API}/detect-dimensions-esp32?esp32_url=${encodeURIComponent(esp32Url)}`);
+        const data = await res.json();
+
+        if (!data.success) {
+          throw new Error(data.error || 'Lỗi kết nối ESP32');
+        }
+
+        // Auto-fill measurements (rounded to 1 decimal place)
+        document.getElementById('length_cm').value = (data.length_cm || 0).toFixed(1);
+        document.getElementById('width_cm').value = (data.width_cm || 0).toFixed(1);
+        document.getElementById('height_cm').value = (data.height_cm || 0).toFixed(1);
+
+        // Show measurement fields
+        measurementFields.style.display = 'block';
+
+        // Calculate and show volume
+        updateVolume();
+
+        errorMsg.innerHTML = `✅ Kết nối ESP32 thành công!`;
+        errorMsg.classList.add('show');
+        errorMsg.style.background = '#e8f5e9';
+        errorMsg.style.borderLeftColor = '#4caf50';
+        errorMsg.style.color = '#2e7d32';
+
+      } catch (e) {
+        errorMsg.textContent = `❌ ${e.message}`;
+        errorMsg.classList.add('show');
+        measurementFields.style.display = 'block'; // Show fields anyway for manual input
+      } finally {
+        esp32Loading.style.display = 'none';
+      }
+    }
+
+    function updateVolume() {
+      const length = parseFloat(document.getElementById('length_cm').value) || 0;
+      const width = parseFloat(document.getElementById('width_cm').value) || 0;
+      const height = parseFloat(document.getElementById('height_cm').value) || 0;
+
+      if (length > 0 && width > 0 && height > 0) {
+        const volume = length * width * height;
+        document.getElementById('volumeResult').textContent = volume.toFixed(1);
+        document.getElementById('volumeDisplay').style.display = 'block';
+      }
+    }
+
+    // Update volume when dimensions change
+    ['length_cm', 'width_cm', 'height_cm'].forEach(id => {
+      document.getElementById(id)?.addEventListener('input', updateVolume);
+    });
+
+    async function handleUltrasonicSubmit(e) {
+      e.preventDefault();
+      console.log('📐 handleUltrasonicSubmit called');
+
+      const length = parseFloat(document.getElementById('length_cm').value);
+      const width = parseFloat(document.getElementById('width_cm').value);
+      const height = parseFloat(document.getElementById('height_cm').value);
+      const weight = parseFloat(document.getElementById('weight_kg').value) || 0;
+
+      console.log(`Dimensions: ${length}×${width}×${height}, Weight: ${weight}kg`);
+
+      if (length <= 0 || width <= 0 || height <= 0) {
+        const errorMsg = document.getElementById('errorMessage');
+        errorMsg.textContent = '❌ Vui lòng nhập kích thước hợp lệ';
+        errorMsg.classList.add('show');
+        return;
+      }
+
+      // Store measurement data (rounded to 1 decimal place)
+      const measurementData = {
+        length_cm: parseFloat(length.toFixed(1)),
+        width_cm: parseFloat(width.toFixed(1)),
+        height_cm: parseFloat(height.toFixed(1)),
+        weight_kg: parseFloat(weight.toFixed(1)),
+        volume_cm3: parseFloat((length * width * height).toFixed(1)),
+        measurement_mode: 'ultrasonic'
+      };
+
+      sessionStorage.setItem('measurementData', JSON.stringify(measurementData));
+      console.log('✅ Measurement data saved:', measurementData);
+
+      const errorMsg = document.getElementById('errorMessage');
+      errorMsg.innerHTML = `✅ <strong>Kích thước đã lưu!</strong><br>Thể tích: ${measurementData.volume_cm3.toFixed(1)} cm³`;
+      errorMsg.classList.add('show');
+      errorMsg.style.background = '#e8f5e9';
+      errorMsg.style.borderLeftColor = '#4caf50';
+      errorMsg.style.color = '#2e7d32';
+
+      // Move to next step (shipping calculation)
+      console.log('📤 Calling calculateShippingQuote...');
+      await calculateShippingQuote();
+    }
+
+    async function calculateShippingQuote() {
+      console.log('🚀 calculateShippingQuote started');
+
+      const customerData = JSON.parse(sessionStorage.getItem('customerData') || '{}');
+      const measurementData = JSON.parse(sessionStorage.getItem('measurementData') || '{}');
+
+      console.log('Customer:', customerData);
+      console.log('Measurement:', measurementData);
+
+      const quotePayload = {
+        service: customerData.service || 'ETN011',
+        origin: customerData.sender_province || 'Hà Nội',
+        destination: customerData.receiver_province || 'TP. Hồ Chí Minh',
+        actual_weight_kg: measurementData.weight_kg || 0,
+        length_cm: measurementData.length_cm || 0,
+        width_cm: measurementData.width_cm || 0,
+        height_cm: measurementData.height_cm || 0
+      };
+
+      console.log('Quote payload:', quotePayload);
+
+      try {
+        const res = await fetch(`${API}/quotes`, {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify(quotePayload)
+        });
+
+        const quote = await res.json();
+        console.log('Quote response:', quote);
+
+        if (!res.ok) throw new Error(quote.error || 'Lỗi tính phí');
+
+        // Store quote data
+        sessionStorage.setItem('quoteData', JSON.stringify({
+          ...quotePayload,
+          ...quote
+        }));
+
+        // Display shipping info
+        document.getElementById('quoteService').textContent = quotePayload.service;
+        document.getElementById('quoteRoute').textContent = quote.route || '-';
+        document.getElementById('quoteWeight').textContent = quote.chargeable_weight_kg?.toFixed(1) || '-';
+        document.getElementById('quoteVolume').textContent = measurementData.volume_cm3?.toFixed(1) || '-';
+        document.getElementById('totalAmount').textContent = `${quote.amount_vnd?.toLocaleString('vi-VN')} ₫`;
+
+        // Show shipping section
+        console.log('Showing shipping section');
+        document.getElementById('shippingSection').classList.add('show');
+        window.scrollTo(0, document.getElementById('shippingSection').offsetTop - 50);
+
+        // Generate QR code
+        generateQRCode(quote.amount_vnd);
+
+      } catch (e) {
+        console.error('❌ Error:', e);
+        const errorMsg = document.getElementById('errorMessage');
+        errorMsg.textContent = `❌ ${e.message}`;
+        errorMsg.classList.add('show');
+      }
+    }
+
+    async function generateQRCode(amount) {
+      const qrcodeLoading = document.getElementById('qrcodeLoading');
+      qrcodeLoading.style.display = 'block';
+
+      try {
+        const res = await fetch(`${API}/qrcode?amount_vnd=${amount}`);
+        const blob = await res.blob();
+        const url = URL.createObjectURL(blob);
+        document.getElementById('qrcodeImage').src = url;
+      } catch (e) {
+        console.error('QR code error:', e);
+      } finally {
+        qrcodeLoading.style.display = 'none';
+      }
+    }
+
+    function selectPaymentMethod(method) {
+      document.querySelectorAll('.payment-method-btn').forEach(btn => btn.classList.remove('active'));
+      event.target.closest('.payment-method-btn').classList.add('active');
+
+      if (method === 'bank') {
+        document.getElementById('bankSection').style.display = 'block';
+        document.getElementById('cashSection').style.display = 'none';
+      } else {
+        document.getElementById('bankSection').style.display = 'none';
+        document.getElementById('cashSection').style.display = 'block';
+      }
+    }
+
+    async function confirmBankPayment() {
+      await createOrder('bank_transfer');
+    }
+
+    async function confirmCashPayment() {
+      await createOrder('cash');
+    }
+
+    async function createOrder(paymentMethod) {
+      const paymentLoading = document.getElementById('paymentLoading');
+      const errorMsg = document.getElementById('errorMessage');
+
+      paymentLoading.style.display = 'block';
+      errorMsg.classList.remove('show');
+
+      try {
+        const customerData = JSON.parse(sessionStorage.getItem('customerData') || '{}');
+        const measurementData = JSON.parse(sessionStorage.getItem('measurementData') || '{}');
+        const quoteData = JSON.parse(sessionStorage.getItem('quoteData') || '{}');
+
+        const orderPayload = {
+          sender_name: customerData.sender_name,
+          sender_phone: customerData.sender_phone,
+          sender_province: customerData.sender_province,
+          sender_ward: customerData.sender_ward || '',
+          sender_address: customerData.sender_address,
+          receiver_name: customerData.receiver_name,
+          receiver_phone: customerData.receiver_phone,
+          receiver_province: customerData.receiver_province,
+          receiver_ward: customerData.receiver_ward || '',
+          receiver_address: customerData.receiver_address,
+          item_description: customerData.item_description,
+          service: customerData.service,
+          actual_weight_kg: measurementData.weight_kg,
+          length_cm: measurementData.length_cm,
+          width_cm: measurementData.width_cm,
+          height_cm: measurementData.height_cm,
+          route: quoteData.route,
+          amount_vnd: quoteData.amount_vnd,
+          payment_method: paymentMethod
+        };
+
+        const res = await fetch(`${API}/orders`, {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify(orderPayload)
+        });
+
+        const order = await res.json();
+
+        if (!res.ok) throw new Error(order.error || 'Lỗi tạo đơn hàng');
+
+        // Store tracking code
+        const trackingCode = order.tracking_code;
+        sessionStorage.setItem('trackingCode', trackingCode);
+
+        // Get barcode
+        const barcodeRes = await fetch(`${API}/orders/${trackingCode}/barcode`);
+        const barcodeBlob = await barcodeRes.blob();
+        const barcodeUrl = URL.createObjectURL(barcodeBlob);
+
+        // Show tracking info
+        document.getElementById('trackingCode').textContent = trackingCode;
+        document.getElementById('barcodeImage').src = barcodeUrl;
+
+        // Hide shipping section, show tracking section
+        document.getElementById('shippingSection').classList.remove('show');
+        document.getElementById('trackingSection').style.display = 'block';
+        window.scrollTo(0, document.getElementById('trackingSection').offsetTop - 50);
+
+      } catch (e) {
+        errorMsg.textContent = `❌ ${e.message}`;
+        errorMsg.classList.add('show');
+      } finally {
+        paymentLoading.style.display = 'none';
+      }
+    }
+
+    function printOrder() {
+      window.print();
+    }
+
+    function startNewOrder() {
+      // Clear session storage
+      sessionStorage.clear();
+
+      // Reset all forms
+      document.getElementById('customerForm').reset();
+      document.getElementById('ultrasonicForm').reset();
+      document.getElementById('docImage').value = '';
+
+      // Hide all sections except step 1
+      document.querySelectorAll('.form-section').forEach(section => {
+        section.classList.remove('show');
+        section.style.display = 'none';
+      });
+      document.getElementById('shippingSection').classList.remove('show');
+      document.getElementById('trackingSection').style.display = 'none';
+      document.getElementById('formSection').style.display = 'none';
+      document.getElementById('ultrasonicSection').style.display = 'none';
+
+      // Reset to top
+      window.scrollTo(0, 0);
+
+      const errorMsg = document.getElementById('errorMessage');
+      errorMsg.classList.remove('show');
+      errorMsg.innerHTML = `✅ <strong>Bắt đầu tạo đơn hàng mới!</strong>`;
+      errorMsg.classList.add('show');
+      errorMsg.style.background = '#e8f5e9';
+      errorMsg.style.borderLeftColor = '#4caf50';
+      errorMsg.style.color = '#2e7d32';
+    }
+  </script>
+</body>
+</html>

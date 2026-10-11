@@ -1,0 +1,106 @@
+\chapter{Introduction}
+\label{chap:introduction}
+
+\section{Background and Motivation}
+\label{sec:background_motivation}
+
+In the context of the fourth industrial revolution and the rapid progress of artificial intelligence (AI), AI technology is being applied ever more widely across many fields in order to automate processes, raise productivity and reduce dependence on manual operations. In the postal sector, digital transformation does not stop at digitizing records or moving traditional procedures into software; it also aims at automating repetitive steps, standardizing data and improving operational efficiency.
+
+At the item acceptance stage, however, many steps still require the direct involvement of the counter clerk: reading and entering sender and receiver information, weighing the item, measuring its dimensions, entering the data and checking the information before completing the transaction. Based on the team's own observation at the acceptance counter, a typical postal transaction takes about 6--8 minutes. Performing many manual operations may increase waiting time, create pressure during peak hours and introduce the risk of data-entry errors.
+
+Starting from this practical situation, and drawing on the knowledge acquired in the Artificial Intelligence specialization, the team identified this as a problem with strong practical relevance that is amenable to AI-based solutions. The team therefore set out to apply its knowledge of computer vision, image recognition and data processing to build a solution that can help automate the postal acceptance process, in particular information recognition, parcel dimension determination and the computation of the required parameters.
+
+\section{Literature Review}
+
+Recent studies show that computer vision and deep learning are increasingly being applied to the automation of postal item processing. The research directions most directly related to this topic are text recognition, object detection, parcel dimension measurement, and the use of depth information to reconstruct three-dimensional dimensions.
+
+Li et al.~\cite{li2023trocr} proposed TrOCR to address text recognition from images, particularly handwriting. Unlike traditional OCR systems that combine convolutional and recurrent networks, TrOCR uses a Transformer with an image encoder and a text decoder in an end-to-end architecture. The results show that TrOCR performs well on printed text, handwriting and scene text datasets. The advantage of the method is that it exploits pretrained models and can be fine-tuned for different data domains. Even so, the model still needs to be adapted to the linguistic and data characteristics of each application. This matches the present project, in which the team inherits TrOCR and fine-tunes it on Vietnamese handwriting data in order to recognize information on shipping forms.
+
+For dimension measurement, Fernandes et al.~\cite{fernandes2006} studied a method for determining box dimensions from camera images. The method relies on perspective geometry, the box outline, and information from laser beams to infer the real dimensions of the object. The advantage is a clear geometric foundation and the ability to measure automatically from images. However, the use of lasers increases the hardware requirements and makes the system dependent on the measurement configuration. Following this direction, the present project also uses images to determine parcel dimensions, but replaces the laser system with YOLO, region-of-interest extraction and Canny edge detection, and then converts pixel dimensions into real-world units.
+
+Peng et al.~\cite{peng2020} approached box dimension measurement by combining laser triangulation and deep learning. The method exploits the geometric and depth information obtained from a structured light system to determine box features. Compared with methods that use only two-dimensional images, this approach has the advantage of capturing three-dimensional information and can improve dimension measurement. However, the system requires specialized optical devices such as a laser projector, which increases cost and deployment complexity. This study shows that depth information is an effective direction for dimension measurement, but at the same time raises the issue of hardware cost and complexity.
+
+A different direction is presented in the thesis \textit{Applying 3D cameras to product classification by shape and size} \cite{lethai2019}, which uses stereo vision to capture three-dimensional information. Two cameras observe the same object from different angles, and the disparity between corresponding points is then used to estimate depth. The advantage of the method is that three-dimensional spatial information can be obtained without physical contact with the object. However, accuracy depends on camera placement, the distance to the object and the ability to identify corresponding points; occlusion and overlapping objects also cause difficulties for the system. This work is directly related to the multi-camera dimension measurement direction of the project, but the team chose a simpler approach based on two cameras and geometric relations rather than building a complete stereo reconstruction system.
+
+More recently, Tran et al.~\cite{tran2026} proposed an integrated parcel processing system based on YOLOv12-BiFPN-ResCBAM, targeting barcode recognition, dimension measurement and parcel damage detection. The study reflects a shift in the field from solving individual tasks towards building automated systems that integrate multiple functions. The advantage of the method is that it addresses accuracy, processing speed and edge deployability at the same time. However, the study focuses on barcodes, dimensions and parcel condition, and does not address handwriting recognition or the extraction of sender and receiver information as required in the present project.
+
+A summary of these approaches is given in Table~\ref{tab:algorithms}.
+
+\begin{table}[htbp]
+\centering
+\caption{Comparison of the reviewed approaches}
+\label{tab:algorithms}
+\small
+\begin{tabular}{R{2.6cm}R{3.0cm}R{3.6cm}R{3.6cm}}
+\hline
+\textbf{Work} & \textbf{Approach} & \textbf{Advantages} & \textbf{Limitations} \\
+\hline
+Li et al.~\cite{li2023trocr} & Transformer encoder--decoder OCR & Effective on printed, handwritten and scene text; fine-tunable & Must be adapted to the language and data of each application \\
+\hline
+Fernandes et al.~\cite{fernandes2006} & Perspective geometry with laser beams & Clear geometric basis; automatic measurement from images & Requires laser hardware; dependent on the measurement configuration \\
+\hline
+Peng et al.~\cite{peng2020} & Laser triangulation with deep learning & Captures 3D information; improves dimension measurement & Requires a laser projector; higher cost and complexity \\
+\hline
+Lê Văn Thái \cite{lethai2019} & Stereo vision with two cameras & Contactless 3D capture & Sensitive to camera placement, distance and occlusion \\
+\hline
+Tran et al.~\cite{tran2026} & YOLOv12-\hspace{0pt}BiFPN-\hspace{0pt}ResCBAM integrated system & Accuracy, speed and edge deployability addressed together & Covers barcodes, dimensions and damage only; no handwriting extraction \\
+\hline
+\end{tabular}
+\end{table}
+
+
+As Table~\ref{tab:algorithms} shows, each method has clear advantages but also its own limitations. Modern OCR models \cite{li2023trocr} recognize handwriting well but need to be adapted to a specific language and dataset. Laser-based dimension measurement \cite{fernandes2006, peng2020} and camera-based three-dimensional capture \cite{lethai2019} perform well but require specialized hardware. Methods using ordinary cameras, on the other hand, are cheaper but depend heavily on camera placement, environmental conditions and the geometric configuration.
+
+The gap this project targets is the construction of an integrated workflow able to handle multiple tasks within a single system, covering parcel detection, Vietnamese handwriting recognition, information extraction, dimension measurement and volume computation. Instead of relying on a depth camera or specialized laser equipment, the team uses YOLO combined with image processing and two cameras in order to reduce hardware complexity. At the same time, TrOCR is fine-tuned on Vietnamese data and combined with layout processing steps that turn the OCR output into structured information.
+
+
+\section{Problem Statement}
+\label{sec:problem_statement}
+
+In the current postal acceptance workflow, the counter clerk has to perform many operations manually, such as reading and entering customer information, reading the weight from the scale, measuring parcel dimensions and entering the parameters into the software. These steps are performed sequentially and depend heavily on the clerk's actions, which may increase processing time and lead to errors when reading or entering data. Based on the team's on-site observation at the acceptance stage, a typical postal transaction takes about 6--8 minutes to complete. However, existing standalone automation solutions do not simultaneously connect information recognition, weight capture, dimension measurement and fee calculation into a unified workflow.
+
+The problem addressed in this study is therefore how to design a system that automates part of these operations, covering item classification, handwritten information extraction, parcel dimension measurement and shipping fee calculation, while still allowing the clerk to review and confirm the results before the transaction is completed.
+
+\section{Objectives and Contributions}
+
+\subsection{General Objective}
+
+The project aims to build a system that automates part of the postal item acceptance workflow at the counter. The system uses artificial intelligence models and reasonably priced measurement devices to automatically recognize sender and receiver information, capture the weight, measure parcel dimensions and support fee calculation. In doing so, the system aims to reduce manual data entry and shorten the processing time of each postal item.
+
+\subsection{Specific Objectives}
+
+\begin{itemize}
+    \item \textbf{Build a workflow for postal information recognition and processing.} Use an object detection model to identify whether the item is an envelope or a parcel, extract the regions containing information, and apply TrOCR to recognize handwritten names, phone numbers and addresses. The recognized output is then processed and normalized into structured data fields.
+
+    \item \textbf{Build and compare two parcel dimension measurement methods.} Develop one method using two webcams and another using three ultrasonic sensors to determine the length, width, height and volume of the parcel. The two methods are assessed with appropriate error metrics in order to analyze their accuracy and applicability.
+
+    \item \textbf{Build a shipping fee calculation module.} Develop a pipeline that normalizes province and city names, determines the shipping route, computes the volumetric weight and the chargeable weight, and then looks up the tariff table to calculate the fee for each service type. The actual weight is measured by the clerk and entered into the system.
+
+    \item \textbf{Integrate the components into a unified workflow.} Connect information recognition, item classification, dimension measurement and fee calculation in order to fill in the form automatically. The system allows the clerk to review, edit and confirm the results before the data is saved to the database.
+\end{itemize}
+
+\subsection{Contributions}
+
+\begin{itemize}
+    \item \textbf{Theoretical benefits.} The project contributes to research on AI applications in postal operations by testing a multi-stage detect and recognize pipeline for Vietnamese handwritten-text OCR, while also comparing low-cost volume-measurement approaches based on computer vision and on ultrasonic sensors.
+
+    \item \textbf{Practical benefits.} Compared with complex and costly industrial automation systems, the proposed solution uses simple, flexible hardware, reducing initial investment and maintenance costs and bringing automation closer to small- and medium-sized post offices.
+\end{itemize}
+
+\section{Scope and Limitations}
+
+\subsection{Scope}
+
+Within this project, the team focuses on building and testing two main components at a small scale, at prototype level: reading handwriting on shipping forms with AI, and measuring postal item dimensions with webcams and ultrasonic sensors. All experiments were carried out on a single equipment set at a single location. They have not been extended to multiple post offices or connected to the official postal software system.
+
+\subsection{Limitations}
+
+The following limitations follow from the available time and resources.
+
+\begin{itemize}
+    \item \textbf{Real effectiveness at the counter has not been measured.} Targets such as reducing the time to 3--4 minutes per item or cutting manual data entry by 80\% are design goals. They have not yet been tested with real clerks and customers at the counter in order to measure and compare performance before and after deployment.
+
+    \item \textbf{The system is not connected to the real postal software and tariff system.} The shipping fee calculation in the project is currently self-built logic for experimentation only, and has not been connected to the official software system in use at the post office.
+
+    \item \textbf{The system has only been run on a personal computer.} The entire system is currently installed and tested on a single Windows machine, and has not been deployed to a production environment for multi-user access or for testing under real working conditions at the counter.
+\end{itemize}

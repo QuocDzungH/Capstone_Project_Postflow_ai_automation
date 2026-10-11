@@ -1,0 +1,85 @@
+\chapter{Theoretical Background}
+\label{chap:theoretical_background}
+
+This chapter presents the theoretical foundations on which the project is built. It first describes the two model families used in the system, then the mathematical basis of the two measurement methods.
+
+\section{Fundamental Concepts}
+
+\subsection{YOLO}
+
+YOLO, standing for You Only Look Once, is a family of single-stage object detection models. The model processes the whole image and directly predicts bounding box positions together with class probabilities in a single inference pass. This unified approach differs from the two-stage methods of the R-CNN family, in which region proposals are generated before classification and bounding box refinement are performed.
+
+For each detected object, YOLO returns three main pieces of information \cite{redmon2016}:
+
+\begin{itemize}
+    \item \textbf{Bounding box:} the position and size of the object in the image.
+    \item \textbf{Class label:} which class the object belongs to.
+    \item \textbf{Confidence score:} how confident the model is in the prediction.
+\end{itemize}
+
+\subsection{Text Detection with EasyOCR and CRAFT}
+
+EasyOCR is an open-source OCR framework that provides components for text detection and recognition \cite{easyocr}. In this project, EasyOCR is used only for text detection, while text recognition is performed by the fine-tuned TrOCR model.
+
+The text detection component used through EasyOCR is CRAFT (Character Region Awareness for Text Detection), a CNN-based model that detects text at the character level. CRAFT produces two score maps: a region score map representing character regions and an affinity score map representing the connections between adjacent characters. These maps are combined to group characters into word- or text-line-level bounding boxes \cite{baek2019craft}. The detected bounding boxes are then cropped and passed to TrOCR for handwriting recognition.
+
+\subsection{TrOCR}
+
+TrOCR is an end-to-end text recognition model based on the Transformer encoder--decoder architecture. Unlike traditional approaches, which typically combine a convolutional neural network to extract image features with a recurrent neural network to generate the character sequence, TrOCR uses Transformers for both image encoding and text generation. TrOCR performs content recognition only; locating and cropping the region that contains the text must be handled by another component of the pipeline.
+
+The TrOCR architecture consists of two main components.
+
+\begin{itemize}
+    \item \textbf{Image Transformer encoder.} The input text-line image is split into fixed-size patches. Each patch is flattened, linearly projected into a feature vector and combined with a positional embedding to preserve position information. The vector sequence is then passed through the Transformer encoder layers to produce a feature representation of the image.
+
+    \item \textbf{Text Transformer decoder.} The decoder receives the image features from the encoder and generates the token sequence autoregressively. At each step, the next token is predicted from the image features and the tokens generated so far. The process ends when the model emits the end-of-sequence token.
+\end{itemize}
+
+For the \texttt{microsoft/trocr-base-handwritten} checkpoint, the image is split into $16 \times 16$ patches. The image encoder is initialized from BEiT weights, while the text decoder is initialized from RoBERTa weights. This is the specific configuration of the checkpoint selected by the team, not a requirement for every version of TrOCR \cite{hf_trocr}.
+
+\subsection{Canny Edge Detection}
+
+Canny is a multi-stage edge detection algorithm proposed by John Canny in 1986. It identifies edges by detecting significant changes in image intensity while reducing the influence of noise. The algorithm consists of several main steps \cite{canny1986}:
+
+\begin{itemize}
+    \item \textbf{Gaussian filtering:} smooths the image to reduce noise.
+    \item \textbf{Gradient calculation:} determines the intensity changes and edge directions.
+    \item \textbf{Non-maximum suppression:} thins detected edges to obtain precise boundaries.
+    \item \textbf{Double thresholding:} classifies pixels into strong edges, weak edges and non-edges.
+    \item \textbf{Edge tracking by hysteresis:} retains weak edges connected to strong edges and removes noise.
+\end{itemize}
+
+The output is a binary edge map representing the detected boundaries in the image.
+
+\subsection{Ultrasonic Distance Sensor}
+
+An ultrasonic sensor measures distance using the time-of-flight principle. After receiving a trigger signal, the sensor emits a 40\,kHz ultrasonic wave towards the object \cite{hcsr04, srf05}. The wave is reflected from the object surface and returns to the sensor. The duration of the echo pulse represents the round-trip travel time of the wave. The distance from the sensor to the object is then calculated using Equation~\eqref{eq:tof}.
+
+\section{Mathematical or Theoretical Basis}
+
+The ultrasonic measurement method is based on the time-of-flight principle. The distance from the sensor to the surface of the object is determined from the round-trip travel time of the ultrasonic wave, as given in Equation~\eqref{eq:tof}:
+
+\begin{equation}
+\label{eq:tof}
+d = \frac{v(T) \times t}{2}
+\end{equation}
+
+where $d$ is the distance from the sensor to the surface of the object, $v(T)$ is the speed of sound at temperature $T$, and $t$ is the round-trip travel time of the ultrasonic wave. The expression is divided by two because the measured time covers both the propagation of the wave from the sensor to the object and its reflection back to the receiver.
+
+The speed of sound in air varies with the ambient temperature and is approximated by Equation~\eqref{eq:speedofsound} \cite{openstax_sound}:
+
+\begin{equation}
+\label{eq:speedofsound}
+v(T) = 331.3 + 0.606\,T
+\end{equation}
+
+where $T$ is the ambient temperature in degrees Celsius and $v(T)$ is the speed of sound in metres per second.
+
+For both the ultrasonic method and the webcam method, the parcel is approximated as a rectangular box, so that its volume is computed with Equation~\eqref{eq:volume}:
+
+\begin{equation}
+\label{eq:volume}
+V = L \times W \times H
+\end{equation}
+
+where $L$, $W$ and $H$ are respectively the length, width and height of the parcel in centimetres, and $V$ is its volume in cubic centimetres.

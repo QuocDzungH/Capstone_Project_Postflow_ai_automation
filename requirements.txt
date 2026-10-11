@@ -1,0 +1,8 @@
+# Lightweight demo: manual entry, tariffs, orders and simulated payment.
+fastapi>=0.115,<1.0
+uvicorn[standard]>=0.30,<1.0
+Pillow>=10.0
+python-multipart>=0.0.6
+python-barcode>=0.16
+python-dotenv>=1.0
+qrcode>=7.4

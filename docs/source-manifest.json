@@ -1,0 +1,827 @@
+[
+  {
+    "source": "Đồ án phần data code/Huy ANh_Pricing_ Handwriting Recognition/graduation.zip",
+    "destination": "backend/app.py",
+    "original_sha256": "cadb767d3e573c4f31f4db6033a0b249ea8ded889f16e7493d68d9c1d76b7b5c",
+    "archive_member": "graduation/backend/app.py",
+    "final_sha256": "65485d77ee2c1d5a10c66d1d59d026c626b8e0f62d4310db359248494f1a0a77"
+  },
+  {
+    "source": "Đồ án phần data code/Huy ANh_Pricing_ Handwriting Recognition/graduation.zip",
+    "destination": "backend/database.py",
+    "original_sha256": "3fa989545b00015b584478560b4cc5bb9fae74549fdac7706f9a99894d91b5d8",
+    "archive_member": "graduation/backend/database.py",
+    "final_sha256": "34cf52258bbab1c10555ec1d35d2995b8aac1f14e79728188ff1dacf18e4c71e"
+  },
+  {
+    "source": "Đồ án phần data code/Huy ANh_Pricing_ Handwriting Recognition/graduation.zip",
+    "destination": "backend/dimension_detector.py",
+    "original_sha256": "ff1835d9c3b01e825cbb707906819b78ff6d477af999eb32e0d9e37c7235b7f2",
+    "archive_member": "graduation/backend/dimension_detector.py",
+    "final_sha256": "ff1835d9c3b01e825cbb707906819b78ff6d477af999eb32e0d9e37c7235b7f2"
+  },
+  {
+    "source": "Đồ án phần data code/Huy ANh_Pricing_ Handwriting Recognition/graduation.zip",
+    "destination": "backend/document_processor.py",
+    "original_sha256": "6a41b1528fb97984cf6087cb6beee9ee8a4d558b39aac61812bfe585c2891e4d",
+    "archive_member": "graduation/backend/document_processor.py",
+    "final_sha256": "6a41b1528fb97984cf6087cb6beee9ee8a4d558b39aac61812bfe585c2891e4d"
+  },
+  {
+    "source": "Đồ án phần data code/Huy ANh_Pricing_ Handwriting Recognition/graduation.zip",
+    "destination": "backend/hybrid_ocr.py",
+    "original_sha256": "41e938628b717e61b67aa36274536a11124da79520e7bb163e2d4ffcd7b09bf4",
+    "archive_member": "graduation/backend/hybrid_ocr.py",
+    "final_sha256": "f757d2aee48dc013604275e207413521a52c306d8884edcc670a1c245fd02ceb"
+  },
+  {
+    "source": "Đồ án phần data code/Huy ANh_Pricing_ Handwriting Recognition/graduation.zip",
+    "destination": "backend/multi_camera_detector.py",
+    "original_sha256": "bc959cbb2a41af46a8d226cd45dd7f5d3f145b78cf45dc601df020e3fc4df28d",
+    "archive_member": "graduation/backend/multi_camera_detector.py",
+    "final_sha256": "bc959cbb2a41af46a8d226cd45dd7f5d3f145b78cf45dc601df020e3fc4df28d"
+  },
+  {
+    "source": "Đồ án phần data code/Huy ANh_Pricing_ Handwriting Recognition/graduation.zip",
+    "destination": "backend/ocr_processor.py",
+    "original_sha256": "a68886e0087c24f3c3c5ed7579c74444fa6a8b407962a825650586ce82b0781b",
+    "archive_member": "graduation/backend/ocr_processor.py",
+    "final_sha256": "895d06d04110d9375ffb05bc58aa3cdd62d8059d5876430c1e656ec6b8a88f81"
+  },
+  {
+    "source": "Đồ án phần data code/Huy ANh_Pricing_ Handwriting Recognition/graduation.zip",
+    "destination": "backend/pricing.py",
+    "original_sha256": "60556fbe92c631fe070041e6051654e992b7ec46fc424febde4612683831b5bd",
+    "archive_member": "graduation/backend/pricing.py",
+    "final_sha256": "60556fbe92c631fe070041e6051654e992b7ec46fc424febde4612683831b5bd"
+  },
+  {
+    "source": "Đồ án phần data code/Huy ANh_Pricing_ Handwriting Recognition/graduation.zip",
+    "destination": "backend/text_layout_analyzer.py",
+    "original_sha256": "59333453aaf4ab36c6a4b80c306530d0c70ba9fc9833f87f9dd60c4e6d2ad98b",
+    "archive_member": "graduation/backend/text_layout_analyzer.py",
+    "final_sha256": "59333453aaf4ab36c6a4b80c306530d0c70ba9fc9833f87f9dd60c4e6d2ad98b"
+  },
+  {
+    "source": "Đồ án phần data code/Huy ANh_Pricing_ Handwriting Recognition/graduation.zip",
+    "destination": "backend/volume_detector.py",
+    "original_sha256": "7afcc1265bbdf072bca9dae40c983c093d8b71a76eedd11897d175a3d14d6aa9",
+    "archive_member": "graduation/backend/volume_detector.py",
+    "final_sha256": "7afcc1265bbdf072bca9dae40c983c093d8b71a76eedd11897d175a3d14d6aa9"
+  },
+  {
+    "source": "Đồ án phần data code/Huy ANh_Pricing_ Handwriting Recognition/graduation.zip",
+    "destination": "backend/weight_detector.py",
+    "original_sha256": "a94a9bcee73006ca8dd075d3a7d70fc4a97fb5681194d87e3b6d1e0c94d8a26b",
+    "archive_member": "graduation/backend/weight_detector.py",
+    "final_sha256": "a94a9bcee73006ca8dd075d3a7d70fc4a97fb5681194d87e3b6d1e0c94d8a26b"
+  },
+  {
+    "source": "Đồ án phần data code/Huy ANh_Pricing_ Handwriting Recognition/graduation.zip",
+    "destination": "backend/__init__.py",
+    "original_sha256": "812e0a471f23295f9440509ecfc69968a22670ae914753d546b95e5510a51d2f",
+    "archive_member": "graduation/backend/__init__.py",
+    "final_sha256": "812e0a471f23295f9440509ecfc69968a22670ae914753d546b95e5510a51d2f"
+  },
+  {
+    "source": "Đồ án phần data code/Huy ANh_Pricing_ Handwriting Recognition/graduation.zip",
+    "destination": "backend/data/pricing.json",
+    "original_sha256": "fa9ae6a2fe2fd463af54d30ea6e4e8c53abf47768462547fd9975cc58ccdcde5",
+    "archive_member": "graduation/backend/data/pricing.json",
+    "final_sha256": "fa9ae6a2fe2fd463af54d30ea6e4e8c53abf47768462547fd9975cc58ccdcde5"
+  },
+  {
+    "source": "Đồ án phần data code/Huy ANh_Pricing_ Handwriting Recognition/graduation.zip",
+    "destination": "backend/data/regions.json",
+    "original_sha256": "ff79949c419c63c6d728b12d4b8fe2da5547a6a1df55dc89801f8dc80893a370",
+    "archive_member": "graduation/backend/data/regions.json",
+    "final_sha256": "ff79949c419c63c6d728b12d4b8fe2da5547a6a1df55dc89801f8dc80893a370"
+  },
+  {
+    "source": "Đồ án phần data code/Huy ANh_Pricing_ Handwriting Recognition/graduation.zip",
+    "destination": "backend/data/regions.md",
+    "original_sha256": "dda6859303c2a804a5aac00ec85a38a2d70e93705923d202ffe46e23ee02696b",
+    "archive_member": "graduation/backend/data/regions.md",
+    "final_sha256": "dda6859303c2a804a5aac00ec85a38a2d70e93705923d202ffe46e23ee02696b"
+  },
+  {
+    "source": "Đồ án phần data code/Huy ANh_Pricing_ Handwriting Recognition/graduation.zip",
+    "destination": "backend/data/simplified_json_generated_data_vn_units.json",
+    "original_sha256": "717cb123f695949c38c0651413f75f829cb463889b4b50ac65e37f09210c1636",
+    "archive_member": "graduation/backend/data/simplified_json_generated_data_vn_units.json",
+    "final_sha256": "717cb123f695949c38c0651413f75f829cb463889b4b50ac65e37f09210c1636"
+  },
+  {
+    "source": "Đồ án phần data code/Huy ANh_Pricing_ Handwriting Recognition/graduation.zip",
+    "destination": "index.html",
+    "original_sha256": "d64f2d71f270ac78bbdf52f0e3e17dcbbe1d046b1e35394e6ec760669d0e986b",
+    "archive_member": "graduation/index.html",
+    "final_sha256": "23831c2f5d0cd62630e55c4d9d802e2f3e3ab779fa622204666f909e5b52b045"
+  },
+  {
+    "source": "Đồ án phần data code/Huy ANh_Pricing_ Handwriting Recognition/graduation.zip",
+    "destination": "app.js",
+    "original_sha256": "61638120e1c9d52b4bff83051d8ce409d1a35b67114e84354a21be0f3498fd9d",
+    "archive_member": "graduation/app.js",
+    "final_sha256": "b3bbbb4c4287251e197bb0c9406ec8f5671c6d40bb965a954a34bb1f15598b1d"
+  },
+  {
+    "source": "Đồ án phần data code/Huy ANh_Pricing_ Handwriting Recognition/graduation.zip",
+    "destination": "styles.css",
+    "original_sha256": "596f30d9126419211cb92586e35bccbfcc6e99e7ad60119bf512f6ff1de27260",
+    "archive_member": "graduation/styles.css",
+    "final_sha256": "596f30d9126419211cb92586e35bccbfcc6e99e7ad60119bf512f6ff1de27260"
+  },
+  {
+    "source": "Đồ án phần data code/Huy ANh_Pricing_ Handwriting Recognition/graduation.zip",
+    "destination": "tests/test_pricing.py",
+    "original_sha256": "e474f48e8b751207040ab9b27da604be1effcf7dc14de908b217e108a2f57da4",
+    "archive_member": "graduation/tests/test_pricing.py",
+    "final_sha256": "d914ca1c5abfec6b810f3cc7ea5aab966153faece24be53c6fe05e98f19a32e7"
+  },
+  {
+    "source": "Đồ án phần data code/Huy ANh_Pricing_ Handwriting Recognition/graduation.zip",
+    "destination": "legacy-ui/demo.html",
+    "original_sha256": "11941d818f1960cb8d9f121af582b9b80bc862c2426606827788ad916998c078",
+    "archive_member": "graduation/demo.html",
+    "final_sha256": "11941d818f1960cb8d9f121af582b9b80bc862c2426606827788ad916998c078"
+  },
+  {
+    "source": "Đồ án phần data code/Huy ANh_Pricing_ Handwriting Recognition/graduation.zip",
+    "destination": "legacy-ui/final.html",
+    "original_sha256": "7913289d0cd1a13523639d5c01a84190c5ff26e259d2fce45ac79452d72fa7dd",
+    "archive_member": "graduation/final.html",
+    "final_sha256": "7913289d0cd1a13523639d5c01a84190c5ff26e259d2fce45ac79452d72fa7dd"
+  },
+  {
+    "source": "Đồ án phần data code/Huy ANh_Pricing_ Handwriting Recognition/graduation.zip",
+    "destination": "legacy-ui/final3.html",
+    "original_sha256": "64bffe2b80f48c087645a3726a194c993dab27eab57815b106ba9916a99428e9",
+    "archive_member": "graduation/final3.html",
+    "final_sha256": "64bffe2b80f48c087645a3726a194c993dab27eab57815b106ba9916a99428e9"
+  },
+  {
+    "source": "Đồ án phần data code/Huy ANh_Pricing_ Handwriting Recognition/graduation.zip",
+    "destination": "docs/technical/MODEL_EXPLANATION.md",
+    "original_sha256": "e920d5d4263fdd2cf8657506fc72b5c7938b1ed313e2476bd9b8c4b48a0c6f36",
+    "archive_member": "graduation/md/MODEL_EXPLANATION.md",
+    "final_sha256": "e920d5d4263fdd2cf8657506fc72b5c7938b1ed313e2476bd9b8c4b48a0c6f36"
+  },
+  {
+    "source": "Đồ án phần data code/Huy ANh_Pricing_ Handwriting Recognition/graduation.zip",
+    "destination": "docs/technical/OCR_CODE_EXPLANATION_VI.md",
+    "original_sha256": "a8452dd7ca0064932f8b4fc1d49facccb395c0f4d43cc015de86cc0018542de0",
+    "archive_member": "graduation/md/OCR_CODE_EXPLANATION_VI.md",
+    "final_sha256": "a8452dd7ca0064932f8b4fc1d49facccb395c0f4d43cc015de86cc0018542de0"
+  },
+  {
+    "source": "Đồ án phần data code/Huy ANh_Pricing_ Handwriting Recognition/graduation.zip",
+    "destination": "docs/technical/TEXT_LAYOUT_ANALYZER_VI.md",
+    "original_sha256": "5e7854767f5bb6427b597b77ffcee253665db4b63bb96fe800d2a2c3565252f0",
+    "archive_member": "graduation/TEXT_LAYOUT_ANALYZER_VI.md",
+    "final_sha256": "5e7854767f5bb6427b597b77ffcee253665db4b63bb96fe800d2a2c3565252f0"
+  },
+  {
+    "source": "Đồ án phần data code/Minh/Phân biệt bưu kiện phong bì-20260904T070840Z-1-001.zip",
+    "destination": "experiments/classification/code.py",
+    "original_sha256": "4a03ece074b1e2d7fe5095483db5b457fec3f2b307025dd685d02e64dc35684b",
+    "archive_member": "Phân biệt bưu kiện phong bì/envelope_box_detechtion/code.py",
+    "final_sha256": "4a03ece074b1e2d7fe5095483db5b457fec3f2b307025dd685d02e64dc35684b"
+  },
+  {
+    "source": "Đồ án phần data code/Minh/Phân biệt bưu kiện phong bì-20260904T070840Z-1-001.zip",
+    "destination": "experiments/classification/test.py",
+    "original_sha256": "ef4ee6a3d65212c3a5ca291ecd9826b39ee8884c43125c77a040cec64437b60f",
+    "archive_member": "Phân biệt bưu kiện phong bì/envelope_box_detechtion/test.py",
+    "final_sha256": "ef4ee6a3d65212c3a5ca291ecd9826b39ee8884c43125c77a040cec64437b60f"
+  },
+  {
+    "source": "Đồ án phần data code/Minh/Phân biệt bưu kiện phong bì-20260904T070840Z-1-001.zip",
+    "destination": "experiments/classification/train.py",
+    "original_sha256": "ef1a9617fb6fb4a0350c3ba9fe378eb30f8a06cf80e907eb4eb1a30972ac79a5",
+    "archive_member": "Phân biệt bưu kiện phong bì/envelope_box_detechtion/train.py",
+    "final_sha256": "ef1a9617fb6fb4a0350c3ba9fe378eb30f8a06cf80e907eb4eb1a30972ac79a5"
+  },
+  {
+    "source": "Đồ án phần data code/Minh/Phân biệt bưu kiện phong bì-20260904T070840Z-1-001.zip",
+    "destination": "experiments/classification/dataset/data.yaml",
+    "original_sha256": "adb97d23869ec62d02da8729532eaaa8eea23cc936c43f89aa07e5ed02fea3fd",
+    "archive_member": "Phân biệt bưu kiện phong bì/envelope_box_detechtion/dataset/data.yaml",
+    "final_sha256": "adb97d23869ec62d02da8729532eaaa8eea23cc936c43f89aa07e5ed02fea3fd"
+  },
+  {
+    "source": "Đồ án phần data code/Minh/Phân biệt bưu kiện phong bì-20260904T070840Z-1-001.zip",
+    "destination": "experiments/classification/dataset/README.dataset.txt",
+    "original_sha256": "1210d31af6f2f1c3f1fe11e71b7435eb81981d3eb6ff4f44b8c6db55a7637e85",
+    "archive_member": "Phân biệt bưu kiện phong bì/envelope_box_detechtion/dataset/README.dataset.txt",
+    "final_sha256": "1210d31af6f2f1c3f1fe11e71b7435eb81981d3eb6ff4f44b8c6db55a7637e85"
+  },
+  {
+    "source": "Đồ án phần data code/Minh/Phân biệt bưu kiện phong bì-20260904T070840Z-1-001.zip",
+    "destination": "experiments/classification/dataset/README.roboflow.txt",
+    "original_sha256": "4d63b31bfca862ed21135ee8b365a17603d77ae4f39b04e2b3c15fac750867c8",
+    "archive_member": "Phân biệt bưu kiện phong bì/envelope_box_detechtion/dataset/README.roboflow.txt",
+    "final_sha256": "4d63b31bfca862ed21135ee8b365a17603d77ae4f39b04e2b3c15fac750867c8"
+  },
+  {
+    "source": "Đồ án phần data code/Minh/Phân biệt bưu kiện phong bì-20260904T070840Z-1-001.zip",
+    "destination": "experiments/training-records/classification/runs/detect/runs/detect/box_envelope_model/args.yaml",
+    "original_sha256": "97657e7b07c5641f2be50cb34de47ca3f128f066a21b18cf51b467f24b99b98a",
+    "archive_member": "Phân biệt bưu kiện phong bì/envelope_box_detechtion/runs/detect/runs/detect/box_envelope_model/args.yaml",
+    "final_sha256": "97657e7b07c5641f2be50cb34de47ca3f128f066a21b18cf51b467f24b99b98a"
+  },
+  {
+    "source": "Đồ án phần data code/Minh/Phân biệt bưu kiện phong bì-20260904T070840Z-1-001.zip",
+    "destination": "experiments/training-records/classification/runs/detect/runs/detect/box_envelope_model/results.csv",
+    "original_sha256": "11fe3fb2ed751312d2f6f3938694d43a4b71a8d0757bb3c7851a4acab5ba212a",
+    "archive_member": "Phân biệt bưu kiện phong bì/envelope_box_detechtion/runs/detect/runs/detect/box_envelope_model/results.csv",
+    "final_sha256": "11fe3fb2ed751312d2f6f3938694d43a4b71a8d0757bb3c7851a4acab5ba212a"
+  },
+  {
+    "source": "Đồ án phần data code/Minh/Tìm info trong bưu kiện-20260904T070839Z-1-001.zip",
+    "destination": "experiments/label_detection/crop.py",
+    "original_sha256": "1c9383524627d43b4b9ac5c3bd9b91400cee9d99ed3faa26db3d16438924212b",
+    "archive_member": "Tìm info trong bưu kiện/box_info_detechtion/crop.py",
+    "final_sha256": "1c9383524627d43b4b9ac5c3bd9b91400cee9d99ed3faa26db3d16438924212b"
+  },
+  {
+    "source": "Đồ án phần data code/Minh/Tìm info trong bưu kiện-20260904T070839Z-1-001.zip",
+    "destination": "experiments/label_detection/test.py",
+    "original_sha256": "b7751ff51281ec3d40e3f041d4aa3d5991e27bcebdbbb8390798f0c3e4550144",
+    "archive_member": "Tìm info trong bưu kiện/box_info_detechtion/test.py",
+    "final_sha256": "b7751ff51281ec3d40e3f041d4aa3d5991e27bcebdbbb8390798f0c3e4550144"
+  },
+  {
+    "source": "Đồ án phần data code/Minh/Tìm info trong bưu kiện-20260904T070839Z-1-001.zip",
+    "destination": "experiments/label_detection/train.py",
+    "original_sha256": "a999a4ac0d7a1406dbb0dfe217b2d28b2d18e44d3f95e6d643e31d61d0031447",
+    "archive_member": "Tìm info trong bưu kiện/box_info_detechtion/train.py",
+    "final_sha256": "a999a4ac0d7a1406dbb0dfe217b2d28b2d18e44d3f95e6d643e31d61d0031447"
+  },
+  {
+    "source": "Đồ án phần data code/Minh/Tìm info trong bưu kiện-20260904T070839Z-1-001.zip",
+    "destination": "experiments/label_detection/dataset/data.yaml",
+    "original_sha256": "4c6d80065426873b986e67d48ed21cd1bf0e9955787028a51d7b087e260daa44",
+    "archive_member": "Tìm info trong bưu kiện/box_info_detechtion/dataset/data.yaml",
+    "final_sha256": "4c6d80065426873b986e67d48ed21cd1bf0e9955787028a51d7b087e260daa44"
+  },
+  {
+    "source": "Đồ án phần data code/Minh/Tìm info trong bưu kiện-20260904T070839Z-1-001.zip",
+    "destination": "experiments/label_detection/dataset/README.dataset.txt",
+    "original_sha256": "1210d31af6f2f1c3f1fe11e71b7435eb81981d3eb6ff4f44b8c6db55a7637e85",
+    "archive_member": "Tìm info trong bưu kiện/box_info_detechtion/dataset/README.dataset.txt",
+    "final_sha256": "1210d31af6f2f1c3f1fe11e71b7435eb81981d3eb6ff4f44b8c6db55a7637e85"
+  },
+  {
+    "source": "Đồ án phần data code/Minh/Tìm info trong bưu kiện-20260904T070839Z-1-001.zip",
+    "destination": "experiments/label_detection/dataset/README.roboflow.txt",
+    "original_sha256": "4d63b31bfca862ed21135ee8b365a17603d77ae4f39b04e2b3c15fac750867c8",
+    "archive_member": "Tìm info trong bưu kiện/box_info_detechtion/dataset/README.roboflow.txt",
+    "final_sha256": "4d63b31bfca862ed21135ee8b365a17603d77ae4f39b04e2b3c15fac750867c8"
+  },
+  {
+    "source": "Đồ án phần data code/Minh/Tìm info trong bưu kiện-20260904T070839Z-1-001.zip",
+    "destination": "experiments/training-records/label_detection/runs/detect/yolo11_stage2_info/args.yaml",
+    "original_sha256": "4d9598b3ce384c73b8426de35fa502922edafee77c74ac3769ef8e1a3f3412c0",
+    "archive_member": "Tìm info trong bưu kiện/box_info_detechtion/runs/detect/yolo11_stage2_info/args.yaml",
+    "final_sha256": "4d9598b3ce384c73b8426de35fa502922edafee77c74ac3769ef8e1a3f3412c0"
+  },
+  {
+    "source": "Đồ án phần data code/Minh/Tìm info trong bưu kiện-20260904T070839Z-1-001.zip",
+    "destination": "experiments/training-records/label_detection/runs/detect/yolo11_stage2_info-2/args.yaml",
+    "original_sha256": "abad10573adc8f4725f5eddfc51f5598a4cac5fb0c182e4c6ab2ce770714bc7f",
+    "archive_member": "Tìm info trong bưu kiện/box_info_detechtion/runs/detect/yolo11_stage2_info-2/args.yaml",
+    "final_sha256": "abad10573adc8f4725f5eddfc51f5598a4cac5fb0c182e4c6ab2ce770714bc7f"
+  },
+  {
+    "source": "Đồ án phần data code/Minh/Tìm info trong bưu kiện-20260904T070839Z-1-001.zip",
+    "destination": "experiments/training-records/label_detection/runs/detect/yolo11_stage2_info-3/args.yaml",
+    "original_sha256": "60d706d48ca1110942d2a2965f1e11ef36a4860804733f194584c67701f13929",
+    "archive_member": "Tìm info trong bưu kiện/box_info_detechtion/runs/detect/yolo11_stage2_info-3/args.yaml",
+    "final_sha256": "60d706d48ca1110942d2a2965f1e11ef36a4860804733f194584c67701f13929"
+  },
+  {
+    "source": "Đồ án phần data code/Minh/Tìm info trong bưu kiện-20260904T070839Z-1-001.zip",
+    "destination": "experiments/training-records/label_detection/runs/detect/yolo11_stage2_info-3/results.csv",
+    "original_sha256": "bafccbdc6f902a1c827481afb337c9c4587d9877d2a575b348b4ab1323ab05ed",
+    "archive_member": "Tìm info trong bưu kiện/box_info_detechtion/runs/detect/yolo11_stage2_info-3/results.csv",
+    "final_sha256": "bafccbdc6f902a1c827481afb337c9c4587d9877d2a575b348b4ab1323ab05ed"
+  },
+  {
+    "source": "Đồ án phần data code/Minh/Tìm info trong bưu kiện-20260904T070839Z-1-001.zip",
+    "destination": "experiments/training-records/label_detection/runs/detect/yolo11_stage2_info-4/args.yaml",
+    "original_sha256": "f1804b6f212e8516ec81832d18439777fd2105a306d8064b0e6e2a4e1af795cf",
+    "archive_member": "Tìm info trong bưu kiện/box_info_detechtion/runs/detect/yolo11_stage2_info-4/args.yaml",
+    "final_sha256": "f1804b6f212e8516ec81832d18439777fd2105a306d8064b0e6e2a4e1af795cf"
+  },
+  {
+    "source": "Đồ án phần data code/Minh/Tìm info trong bưu kiện-20260904T070839Z-1-001.zip",
+    "destination": "experiments/training-records/label_detection/runs/detect/yolo11_stage2_info-5/args.yaml",
+    "original_sha256": "aa042b1469a2bbddae854a3b30278b6b96454ec82bb54cef74690de65b98fdbc",
+    "archive_member": "Tìm info trong bưu kiện/box_info_detechtion/runs/detect/yolo11_stage2_info-5/args.yaml",
+    "final_sha256": "aa042b1469a2bbddae854a3b30278b6b96454ec82bb54cef74690de65b98fdbc"
+  },
+  {
+    "source": "Đồ án phần data code/Minh/Tìm info trong bưu kiện-20260904T070839Z-1-001.zip",
+    "destination": "experiments/training-records/label_detection/runs/detect/yolo11_stage2_info-5/results.csv",
+    "original_sha256": "1b2a4fb65d2eb4667306578c9e37f52f6623cf8cad76f13ab4434cbc3ddf611c",
+    "archive_member": "Tìm info trong bưu kiện/box_info_detechtion/runs/detect/yolo11_stage2_info-5/results.csv",
+    "final_sha256": "1b2a4fb65d2eb4667306578c9e37f52f6623cf8cad76f13ab4434cbc3ddf611c"
+  },
+  {
+    "source": "Đồ án phần data code/Minh/Tìm info trong bưu kiện-20260904T070839Z-1-001.zip",
+    "destination": "experiments/label_detection/stage2_dataset/data_stage2.yaml",
+    "original_sha256": "990c53f5ba99cd568fbc41eb11aedfffd76b59387fb7b48ccb7418249b8adeae",
+    "archive_member": "Tìm info trong bưu kiện/box_info_detechtion/stage2_dataset/data_stage2.yaml",
+    "final_sha256": "990c53f5ba99cd568fbc41eb11aedfffd76b59387fb7b48ccb7418249b8adeae"
+  },
+  {
+    "source": "Đồ án phần data code/Hưng/Tính thể tích bằng webcam-20260904T070838Z-1-001.zip",
+    "destination": "experiments/dimensions/edge_detector_multi.py",
+    "original_sha256": "ebf7bd1cc6fcd488b1046885d217fdc91852e263e77e0f429d04ac1a854c04a8",
+    "archive_member": "Tính thể tích bằng webcam/edge_detector_multi.py",
+    "final_sha256": "ebf7bd1cc6fcd488b1046885d217fdc91852e263e77e0f429d04ac1a854c04a8"
+  },
+  {
+    "source": "Đồ án phần data code/Hưng/Tính thể tích bằng webcam-20260904T070838Z-1-001.zip",
+    "destination": "experiments/dimensions/frame_processor.py",
+    "original_sha256": "39ed8889fa9fa29bc9fb2e38a66db055c5e08b928dad51ee1dcccf8b92415c2b",
+    "archive_member": "Tính thể tích bằng webcam/frame_processor.py",
+    "final_sha256": "39ed8889fa9fa29bc9fb2e38a66db055c5e08b928dad51ee1dcccf8b92415c2b"
+  },
+  {
+    "source": "Đồ án phần data code/Hưng/Tính thể tích bằng webcam-20260904T070838Z-1-001.zip",
+    "destination": "experiments/dimensions/hand_detector.py",
+    "original_sha256": "63e96475a85c12e2d2cac93a13df343374ee77d55b4541ff91e3d1bef97e27cf",
+    "archive_member": "Tính thể tích bằng webcam/hand_detector.py",
+    "final_sha256": "63e96475a85c12e2d2cac93a13df343374ee77d55b4541ff91e3d1bef97e27cf"
+  },
+  {
+    "source": "Đồ án phần data code/Hưng/Tính thể tích bằng webcam-20260904T070838Z-1-001.zip",
+    "destination": "experiments/dimensions/main_multi.py",
+    "original_sha256": "bc52a915048c45212cfb426695e8e1c42e81a17b6abaf606f6ebf3a0b19a6be3",
+    "archive_member": "Tính thể tích bằng webcam/main_multi.py",
+    "final_sha256": "bc52a915048c45212cfb426695e8e1c42e81a17b6abaf606f6ebf3a0b19a6be3"
+  },
+  {
+    "source": "Đồ án phần data code/Hưng/Tính thể tích bằng webcam-20260904T070838Z-1-001.zip",
+    "destination": "experiments/dimensions/measurement.py",
+    "original_sha256": "4510335116dd99b6dbce3c61634e1ddc7a0e9f177eb29641f315118c2559bbc8",
+    "archive_member": "Tính thể tích bằng webcam/measurement.py",
+    "final_sha256": "4510335116dd99b6dbce3c61634e1ddc7a0e9f177eb29641f315118c2559bbc8"
+  },
+  {
+    "source": "Đồ án phần data code/Hưng/Tính thể tích bằng webcam-20260904T070838Z-1-001.zip",
+    "destination": "experiments/dimensions/measurement_draw.py",
+    "original_sha256": "fdcebf39b5aced550e251c0bc30c4abb1ecf26e897f388e14731a2e789da673e",
+    "archive_member": "Tính thể tích bằng webcam/measurement_draw.py",
+    "final_sha256": "fdcebf39b5aced550e251c0bc30c4abb1ecf26e897f388e14731a2e789da673e"
+  },
+  {
+    "source": "Đồ án phần data code/Hưng/Tính thể tích bằng webcam-20260904T070838Z-1-001.zip",
+    "destination": "experiments/dimensions/package_detector.py",
+    "original_sha256": "7480571a4ed0f69f4e70a883a7f6370d1187c0e8dcdd82cf2cf6e667ac8232ee",
+    "archive_member": "Tính thể tích bằng webcam/package_detector.py",
+    "final_sha256": "7480571a4ed0f69f4e70a883a7f6370d1187c0e8dcdd82cf2cf6e667ac8232ee"
+  },
+  {
+    "source": "Đồ án phần data code/Hưng/Tính thể tích bằng webcam-20260904T070838Z-1-001.zip",
+    "destination": "experiments/dimensions/package_roi.py",
+    "original_sha256": "05c61b7fbef339d3b78894acbc4ad96630a6c509e4a63a56b0566849b4d073ab",
+    "archive_member": "Tính thể tích bằng webcam/package_roi.py",
+    "final_sha256": "05c61b7fbef339d3b78894acbc4ad96630a6c509e4a63a56b0566849b4d073ab"
+  },
+  {
+    "source": "Đồ án phần data code/Hưng/Tính thể tích bằng webcam-20260904T070838Z-1-001.zip",
+    "destination": "experiments/dimensions/person_detector.py",
+    "original_sha256": "d15e241bb1595bea5cd2df2590dad8b9a1b4610cfc9b796ee97aa65ce88f4e34",
+    "archive_member": "Tính thể tích bằng webcam/person_detector.py",
+    "final_sha256": "d15e241bb1595bea5cd2df2590dad8b9a1b4610cfc9b796ee97aa65ce88f4e34"
+  },
+  {
+    "source": "Đồ án phần data code/Hưng/Tính thể tích bằng webcam-20260904T070838Z-1-001.zip",
+    "destination": "experiments/dimensions/train_hand.py",
+    "original_sha256": "f2fc79394746328f755bf33cd2a5a8ee374c2ac28b753dac18e9dda82d6f7ce0",
+    "archive_member": "Tính thể tích bằng webcam/train_hand.py",
+    "final_sha256": "f2fc79394746328f755bf33cd2a5a8ee374c2ac28b753dac18e9dda82d6f7ce0"
+  },
+  {
+    "source": "Đồ án phần data code/Hưng/Tính thể tích bằng webcam-20260904T070838Z-1-001.zip",
+    "destination": "experiments/dimensions/train_package.py",
+    "original_sha256": "4870b254fe94778a2128dda26665ef28319df44c9f45fa3d4417c03a9e53a626",
+    "archive_member": "Tính thể tích bằng webcam/train_package.py",
+    "final_sha256": "4870b254fe94778a2128dda26665ef28319df44c9f45fa3d4417c03a9e53a626"
+  },
+  {
+    "source": "Đồ án phần data code/ESP32 STH30D HCSR04/esp32 + nhiệt độ khoong trug kc/SETUP_WIFI_ESP32/SETUP_WIFI_ESP32.ino",
+    "destination": "hardware/esp32/SETUP_WIFI_ESP32/SETUP_WIFI_ESP32.ino",
+    "original_sha256": "d502c3416e4cb6bf769363e59e5d0cb192a66d3e8592bfd536bfa94bbfee5135",
+    "final_sha256": "d502c3416e4cb6bf769363e59e5d0cb192a66d3e8592bfd536bfa94bbfee5135"
+  },
+  {
+    "source": "Đồ án phần data code/ESP32 STH30D HCSR04/esp32 + nhiệt độ khoong trug kc/SETUP_WIFI_ESP32/wifiConfig.h",
+    "destination": "hardware/esp32/SETUP_WIFI_ESP32/wifiConfig.h",
+    "original_sha256": "6e5c8c06fffb26c2baca802969efe7432cb6da385aa5071d9542427e738988a6",
+    "final_sha256": "6c083d55d3339c7581bc27bfa1825ca8c7de84605bdf76c7b650c324efc2bc34"
+  },
+  {
+    "source": "Đồ án phần data code/ESP32 STH30D HCSR04/lay_data_từ web esp32.py",
+    "destination": "hardware/sensor_client.py",
+    "original_sha256": "d70723963b106bb8b68209d6405f0f7349c7a7d24e6434c7bb595e22f2a840a9",
+    "final_sha256": "78858025d1f7ca31f77cd9a7aa57eb6438af4cbae43404061e254221326929fd"
+  },
+  {
+    "source": "Đồ án phần data code/ESP32 STH30D HCSR04/data.xlsx",
+    "destination": "hardware/calibration/data.xlsx",
+    "original_sha256": "a10644e858caa26e29bdb3fd4e64e55fb9b59e618796b175d3568fb5d1b7f565",
+    "final_sha256": "a10644e858caa26e29bdb3fd4e64e55fb9b59e618796b175d3568fb5d1b7f565"
+  },
+  {
+    "source": "Đồ án phần data code/ESP32 STH30D HCSR04/code_cam_bien_linear.ipynb",
+    "destination": "hardware/calibration/sensor_calibration.ipynb",
+    "change": "Removed notebook outputs and execution metadata.",
+    "final_sha256": "38e276ed331a19dc35c61cdc9744eb509d1de4aa537c66bebd24620698eebc4d"
+  },
+  {
+    "source": "đồ án của nhóm phàn report slide/Final_Report.pdf",
+    "destination": "docs/reports/Final_Report.pdf",
+    "original_sha256": "ae14c1a17f40662926ff648eb35652053746b451a7628c917b704b44114f88a2",
+    "final_sha256": "ae14c1a17f40662926ff648eb35652053746b451a7628c917b704b44114f88a2"
+  },
+  {
+    "source": "đồ án của nhóm phàn report slide/Presentation_Final.pdf",
+    "destination": "docs/reports/Presentation_Final.pdf",
+    "original_sha256": "87febc3c862d9e4fe780c263b70a8ac5e7fed7247f49ed6a49b8414843a3a2c4",
+    "final_sha256": "87febc3c862d9e4fe780c263b70a8ac5e7fed7247f49ed6a49b8414843a3a2c4"
+  },
+  {
+    "source": "đồ án của nhóm phàn report slide/Presentation_Final.pptx",
+    "destination": "docs/reports/Presentation_Final.pptx",
+    "original_sha256": "957cfc5ad23b623a0a002839b7e7f4c2c8bc209dbaace80838a2b71fbdad18fc",
+    "final_sha256": "957cfc5ad23b623a0a002839b7e7f4c2c8bc209dbaace80838a2b71fbdad18fc"
+  },
+  {
+    "source": "đồ án của nhóm phàn report slide/Capstone_Project_Overleaf.zip",
+    "destination": "docs/reports/latex/main.tex",
+    "original_sha256": "b30806882abd22ed3f11c1f6715a41a94b6bc7a477e845607339092944282ba6",
+    "archive_member": "main.tex",
+    "final_sha256": "b30806882abd22ed3f11c1f6715a41a94b6bc7a477e845607339092944282ba6"
+  },
+  {
+    "source": "đồ án của nhóm phàn report slide/Capstone_Project_Overleaf.zip",
+    "destination": "docs/reports/latex/Chapters/Chapter 01 - Introduction.tex",
+    "original_sha256": "91cf6fe15e7e1013fc4e1df2ef5a2ca5fda50dc107a01247927b481ec50621c0",
+    "archive_member": "Chapters/Chapter 01 - Introduction.tex",
+    "final_sha256": "91cf6fe15e7e1013fc4e1df2ef5a2ca5fda50dc107a01247927b481ec50621c0"
+  },
+  {
+    "source": "đồ án của nhóm phàn report slide/Capstone_Project_Overleaf.zip",
+    "destination": "docs/reports/latex/Chapters/Chapter 02 - Theoretical Background.tex",
+    "original_sha256": "54b4e91f876448fdd82c018aaf6adc5982a057f9157c69ce155db7e8287ab12d",
+    "archive_member": "Chapters/Chapter 02 - Theoretical Background.tex",
+    "final_sha256": "54b4e91f876448fdd82c018aaf6adc5982a057f9157c69ce155db7e8287ab12d"
+  },
+  {
+    "source": "đồ án của nhóm phàn report slide/Capstone_Project_Overleaf.zip",
+    "destination": "docs/reports/latex/Chapters/Chapter 03 - Data processing.tex",
+    "original_sha256": "347410d5ce583d5dbbd1a9f1f1d3351658ab0e41417f804fdca58b90beab5c45",
+    "archive_member": "Chapters/Chapter 03 - Data processing.tex",
+    "final_sha256": "347410d5ce583d5dbbd1a9f1f1d3351658ab0e41417f804fdca58b90beab5c45"
+  },
+  {
+    "source": "đồ án của nhóm phàn report slide/Capstone_Project_Overleaf.zip",
+    "destination": "docs/reports/latex/Chapters/Chapter 04 - Methodology.tex",
+    "original_sha256": "1f3a411eee795e59b27d60ee31abe68441ff62b139299796366ba82f6a1d620f",
+    "archive_member": "Chapters/Chapter 04 - Methodology.tex",
+    "final_sha256": "1f3a411eee795e59b27d60ee31abe68441ff62b139299796366ba82f6a1d620f"
+  },
+  {
+    "source": "đồ án của nhóm phàn report slide/Capstone_Project_Overleaf.zip",
+    "destination": "docs/reports/latex/Chapters/Chapter 05 - Result analysis.tex",
+    "original_sha256": "7b2edb843f14b5a6a6915b825bc157988f6faf57ac5785a2984ca91140d901d9",
+    "archive_member": "Chapters/Chapter 05 - Result analysis.tex",
+    "final_sha256": "7b2edb843f14b5a6a6915b825bc157988f6faf57ac5785a2984ca91140d901d9"
+  },
+  {
+    "source": "đồ án của nhóm phàn report slide/Capstone_Project_Overleaf.zip",
+    "destination": "docs/reports/latex/Chapters/Chapter 06 - Conclusion.tex",
+    "original_sha256": "b3f1591c2ddbb2479f15c3b8ff3016f12605470e504dbf69ffa6130b04e06086",
+    "archive_member": "Chapters/Chapter 06 - Conclusion.tex",
+    "final_sha256": "b3f1591c2ddbb2479f15c3b8ff3016f12605470e504dbf69ffa6130b04e06086"
+  },
+  {
+    "source": "đồ án của nhóm phàn report slide/Capstone_Project_Overleaf.zip",
+    "destination": "docs/reports/latex/Images/fig3_1a.jpg",
+    "original_sha256": "b98a8f5c04cfff5dd6ffcfe0e58027ff95de2bdd8a1f00c0c64ad252496b698a",
+    "archive_member": "Images/fig3_1a.jpg",
+    "final_sha256": "b98a8f5c04cfff5dd6ffcfe0e58027ff95de2bdd8a1f00c0c64ad252496b698a"
+  },
+  {
+    "source": "đồ án của nhóm phàn report slide/Capstone_Project_Overleaf.zip",
+    "destination": "docs/reports/latex/Images/fig3_1b.jpg",
+    "original_sha256": "17d6fda5834611968630b91ed0e7a1c29e924789f16c11fe673083aa2ed29eab",
+    "archive_member": "Images/fig3_1b.jpg",
+    "final_sha256": "17d6fda5834611968630b91ed0e7a1c29e924789f16c11fe673083aa2ed29eab"
+  },
+  {
+    "source": "đồ án của nhóm phàn report slide/Capstone_Project_Overleaf.zip",
+    "destination": "docs/reports/latex/Images/fig3_2a.jpg",
+    "original_sha256": "6ed6db0cfa1c5cd83a824809992a365982846fe214213ae9702040820039124c",
+    "archive_member": "Images/fig3_2a.jpg",
+    "final_sha256": "6ed6db0cfa1c5cd83a824809992a365982846fe214213ae9702040820039124c"
+  },
+  {
+    "source": "đồ án của nhóm phàn report slide/Capstone_Project_Overleaf.zip",
+    "destination": "docs/reports/latex/Images/fig3_2b.png",
+    "original_sha256": "baba9a585da411b7d0431d0b04dd99cd65efa27889c35957a2b8a551f64c7d7f",
+    "archive_member": "Images/fig3_2b.png",
+    "final_sha256": "baba9a585da411b7d0431d0b04dd99cd65efa27889c35957a2b8a551f64c7d7f"
+  },
+  {
+    "source": "đồ án của nhóm phàn report slide/Capstone_Project_Overleaf.zip",
+    "destination": "docs/reports/latex/Images/fig3_3.jpg",
+    "original_sha256": "dd4ab8aae1d98d9f7423c71caac6a1f9c556cd52ffbef13b2d2b6ebb7cf44785",
+    "archive_member": "Images/fig3_3.jpg",
+    "final_sha256": "dd4ab8aae1d98d9f7423c71caac6a1f9c556cd52ffbef13b2d2b6ebb7cf44785"
+  },
+  {
+    "source": "đồ án của nhóm phàn report slide/Capstone_Project_Overleaf.zip",
+    "destination": "docs/reports/latex/Images/fig3_4.jpg",
+    "original_sha256": "4d4c0182c76f303b0f4fac729a1228bb1f35aec7f77c6ea10aa4e2e5d31ecf62",
+    "archive_member": "Images/fig3_4.jpg",
+    "final_sha256": "4d4c0182c76f303b0f4fac729a1228bb1f35aec7f77c6ea10aa4e2e5d31ecf62"
+  },
+  {
+    "source": "đồ án của nhóm phàn report slide/Capstone_Project_Overleaf.zip",
+    "destination": "docs/reports/latex/Images/fig3_5.png",
+    "original_sha256": "39f1ef16f4c5c6d7a05e7553afa69309d929fb6d9bc48ecaebf959d0b93a0096",
+    "archive_member": "Images/fig3_5.png",
+    "final_sha256": "39f1ef16f4c5c6d7a05e7553afa69309d929fb6d9bc48ecaebf959d0b93a0096"
+  },
+  {
+    "source": "đồ án của nhóm phàn report slide/Capstone_Project_Overleaf.zip",
+    "destination": "docs/reports/latex/Images/fig4_1.png",
+    "original_sha256": "a6b6e7c5f6df93ef39e749dbc01dce1c04d878d90e545b29f484c0e24e42a2e2",
+    "archive_member": "Images/fig4_1.png",
+    "final_sha256": "a6b6e7c5f6df93ef39e749dbc01dce1c04d878d90e545b29f484c0e24e42a2e2"
+  },
+  {
+    "source": "đồ án của nhóm phàn report slide/Capstone_Project_Overleaf.zip",
+    "destination": "docs/reports/latex/Images/fig4_2.jpg",
+    "original_sha256": "007d0b4be134d9dcfc27280ddfb37b4ac5a46a453ee69ad9c0d1cbb8fc3615d6",
+    "archive_member": "Images/fig4_2.jpg",
+    "final_sha256": "007d0b4be134d9dcfc27280ddfb37b4ac5a46a453ee69ad9c0d1cbb8fc3615d6"
+  },
+  {
+    "source": "đồ án của nhóm phàn report slide/Capstone_Project_Overleaf.zip",
+    "destination": "docs/reports/latex/Images/fig4_3.jpg",
+    "original_sha256": "fa03bdba383221c90cb71102ad36f497364a7a273a5d8f7ce132057bc5fba68a",
+    "archive_member": "Images/fig4_3.jpg",
+    "final_sha256": "fa03bdba383221c90cb71102ad36f497364a7a273a5d8f7ce132057bc5fba68a"
+  },
+  {
+    "source": "đồ án của nhóm phàn report slide/Capstone_Project_Overleaf.zip",
+    "destination": "docs/reports/latex/Images/fig4_4.png",
+    "original_sha256": "d3b17b04b8f3c638ec4758090efb319676cf9671f70a8a0cf3b9f3e12d368dff",
+    "archive_member": "Images/fig4_4.png",
+    "final_sha256": "d3b17b04b8f3c638ec4758090efb319676cf9671f70a8a0cf3b9f3e12d368dff"
+  },
+  {
+    "source": "đồ án của nhóm phàn report slide/Capstone_Project_Overleaf.zip",
+    "destination": "docs/reports/latex/Images/fig4_5.jpg",
+    "original_sha256": "43e30a0278d031d54781939672e81964096e2478cbcd17763f81865d392b78f8",
+    "archive_member": "Images/fig4_5.jpg",
+    "final_sha256": "43e30a0278d031d54781939672e81964096e2478cbcd17763f81865d392b78f8"
+  },
+  {
+    "source": "đồ án của nhóm phàn report slide/Capstone_Project_Overleaf.zip",
+    "destination": "docs/reports/latex/Images/fig4_6.png",
+    "original_sha256": "4b9d2ef3766f661a89f19913965177f854494f848052b7d9eb72418ccff5ddeb",
+    "archive_member": "Images/fig4_6.png",
+    "final_sha256": "4b9d2ef3766f661a89f19913965177f854494f848052b7d9eb72418ccff5ddeb"
+  },
+  {
+    "source": "đồ án của nhóm phàn report slide/Capstone_Project_Overleaf.zip",
+    "destination": "docs/reports/latex/Images/fig4_7.jpg",
+    "original_sha256": "aa80e4b7f3c5cec301ff9bb4b40f5083662629027a8c4ce03cfb9f9e088547d1",
+    "archive_member": "Images/fig4_7.jpg",
+    "final_sha256": "aa80e4b7f3c5cec301ff9bb4b40f5083662629027a8c4ce03cfb9f9e088547d1"
+  },
+  {
+    "source": "đồ án của nhóm phàn report slide/Capstone_Project_Overleaf.zip",
+    "destination": "docs/reports/latex/Images/fig4_8.jpg",
+    "original_sha256": "0656c028007cb19efa002e7633a8fa1a8caec5cd2c01d8fcf024d013568b1e70",
+    "archive_member": "Images/fig4_8.jpg",
+    "final_sha256": "0656c028007cb19efa002e7633a8fa1a8caec5cd2c01d8fcf024d013568b1e70"
+  },
+  {
+    "source": "đồ án của nhóm phàn report slide/Capstone_Project_Overleaf.zip",
+    "destination": "docs/reports/latex/Images/fig4_9.jpg",
+    "original_sha256": "59486235ce83a3a65bf2d3db922db3a164302b4ada00271537483c132027f4f6",
+    "archive_member": "Images/fig4_9.jpg",
+    "final_sha256": "59486235ce83a3a65bf2d3db922db3a164302b4ada00271537483c132027f4f6"
+  },
+  {
+    "source": "đồ án của nhóm phàn report slide/Capstone_Project_Overleaf.zip",
+    "destination": "docs/reports/latex/Images/fig5_1.jpg",
+    "original_sha256": "b99dfa3b2f49af54fe8e7f23d4b3bf8769088ccdd507c1038c1935f17caf470a",
+    "archive_member": "Images/fig5_1.jpg",
+    "final_sha256": "b99dfa3b2f49af54fe8e7f23d4b3bf8769088ccdd507c1038c1935f17caf470a"
+  },
+  {
+    "source": "đồ án của nhóm phàn report slide/Capstone_Project_Overleaf.zip",
+    "destination": "docs/reports/latex/Images/fig5_10.png",
+    "original_sha256": "06f96f9510872677f441d6db256911949400c9e6b7027f08a88496c0e7223b31",
+    "archive_member": "Images/fig5_10.png",
+    "final_sha256": "06f96f9510872677f441d6db256911949400c9e6b7027f08a88496c0e7223b31"
+  },
+  {
+    "source": "đồ án của nhóm phàn report slide/Capstone_Project_Overleaf.zip",
+    "destination": "docs/reports/latex/Images/fig5_11.png",
+    "original_sha256": "acf5dab5265f892ce72ad6032005df7ea6ee487fe27375e2bd985655bf812b42",
+    "archive_member": "Images/fig5_11.png",
+    "final_sha256": "acf5dab5265f892ce72ad6032005df7ea6ee487fe27375e2bd985655bf812b42"
+  },
+  {
+    "source": "đồ án của nhóm phàn report slide/Capstone_Project_Overleaf.zip",
+    "destination": "docs/reports/latex/Images/fig5_12.jpg",
+    "original_sha256": "e5a24f5f015f098e69b769c23ff9daabd19d7bcdf4a2751d497abdbf04eb2d09",
+    "archive_member": "Images/fig5_12.jpg",
+    "final_sha256": "e5a24f5f015f098e69b769c23ff9daabd19d7bcdf4a2751d497abdbf04eb2d09"
+  },
+  {
+    "source": "đồ án của nhóm phàn report slide/Capstone_Project_Overleaf.zip",
+    "destination": "docs/reports/latex/Images/fig5_13.jpg",
+    "original_sha256": "0720d9412305231fb544deab8d4c5eef324046dd89da0862e973613a87b992b5",
+    "archive_member": "Images/fig5_13.jpg",
+    "final_sha256": "0720d9412305231fb544deab8d4c5eef324046dd89da0862e973613a87b992b5"
+  },
+  {
+    "source": "đồ án của nhóm phàn report slide/Capstone_Project_Overleaf.zip",
+    "destination": "docs/reports/latex/Images/fig5_14a.jpg",
+    "original_sha256": "9288442e63b735e720aca6a5476dd6110ae9a5ea2a9d712f2e32adfe51cb93c7",
+    "archive_member": "Images/fig5_14a.jpg",
+    "final_sha256": "9288442e63b735e720aca6a5476dd6110ae9a5ea2a9d712f2e32adfe51cb93c7"
+  },
+  {
+    "source": "đồ án của nhóm phàn report slide/Capstone_Project_Overleaf.zip",
+    "destination": "docs/reports/latex/Images/fig5_14b.jpg",
+    "original_sha256": "4103ed03511b2abc2314091e7f93915c723fc7b625eb41d83cb894cc06089459",
+    "archive_member": "Images/fig5_14b.jpg",
+    "final_sha256": "4103ed03511b2abc2314091e7f93915c723fc7b625eb41d83cb894cc06089459"
+  },
+  {
+    "source": "đồ án của nhóm phàn report slide/Capstone_Project_Overleaf.zip",
+    "destination": "docs/reports/latex/Images/fig5_15.png",
+    "original_sha256": "e74872537a777afb3cd829b7620185a9869926ea099fbb4e1a8d4989499f9460",
+    "archive_member": "Images/fig5_15.png",
+    "final_sha256": "e74872537a777afb3cd829b7620185a9869926ea099fbb4e1a8d4989499f9460"
+  },
+  {
+    "source": "đồ án của nhóm phàn report slide/Capstone_Project_Overleaf.zip",
+    "destination": "docs/reports/latex/Images/fig5_16.jpg",
+    "original_sha256": "c93b88525fbd483bdb82b350903c3c4bfd411011f231fc2b6847b8895ad50ef8",
+    "archive_member": "Images/fig5_16.jpg",
+    "final_sha256": "c93b88525fbd483bdb82b350903c3c4bfd411011f231fc2b6847b8895ad50ef8"
+  },
+  {
+    "source": "đồ án của nhóm phàn report slide/Capstone_Project_Overleaf.zip",
+    "destination": "docs/reports/latex/Images/fig5_17.png",
+    "original_sha256": "dcd40ed40f9aa45057a40b6ebe3427afe5e996feaeadef930ebe87c0ea896229",
+    "archive_member": "Images/fig5_17.png",
+    "final_sha256": "dcd40ed40f9aa45057a40b6ebe3427afe5e996feaeadef930ebe87c0ea896229"
+  },
+  {
+    "source": "đồ án của nhóm phàn report slide/Capstone_Project_Overleaf.zip",
+    "destination": "docs/reports/latex/Images/fig5_2.png",
+    "original_sha256": "e609ed97137b8f866d28a347c4b3f02f949bf21e65a5db4685808d07e57e5dd4",
+    "archive_member": "Images/fig5_2.png",
+    "final_sha256": "e609ed97137b8f866d28a347c4b3f02f949bf21e65a5db4685808d07e57e5dd4"
+  },
+  {
+    "source": "đồ án của nhóm phàn report slide/Capstone_Project_Overleaf.zip",
+    "destination": "docs/reports/latex/Images/fig5_3.jpg",
+    "original_sha256": "e77dc5e9080b47b6908014f7f4f1e9c0b20be4aa36ef5dcc99c099fe897676f1",
+    "archive_member": "Images/fig5_3.jpg",
+    "final_sha256": "e77dc5e9080b47b6908014f7f4f1e9c0b20be4aa36ef5dcc99c099fe897676f1"
+  },
+  {
+    "source": "đồ án của nhóm phàn report slide/Capstone_Project_Overleaf.zip",
+    "destination": "docs/reports/latex/Images/fig5_4.png",
+    "original_sha256": "dd7f3024b3d6767833e1fc8489681490dd6924edacfbf237abbbaf9a0385fe82",
+    "archive_member": "Images/fig5_4.png",
+    "final_sha256": "dd7f3024b3d6767833e1fc8489681490dd6924edacfbf237abbbaf9a0385fe82"
+  },
+  {
+    "source": "đồ án của nhóm phàn report slide/Capstone_Project_Overleaf.zip",
+    "destination": "docs/reports/latex/Images/fig5_5.png",
+    "original_sha256": "ab006ddfccc5361aad84c2872bc54667c855624ab17760eb3077336196baa955",
+    "archive_member": "Images/fig5_5.png",
+    "final_sha256": "ab006ddfccc5361aad84c2872bc54667c855624ab17760eb3077336196baa955"
+  },
+  {
+    "source": "đồ án của nhóm phàn report slide/Capstone_Project_Overleaf.zip",
+    "destination": "docs/reports/latex/Images/fig5_6.png",
+    "original_sha256": "54f61bffb714578ac15e1d08e1a68e5a1ecdcc6ae31bda1d19f48c1946b380f1",
+    "archive_member": "Images/fig5_6.png",
+    "final_sha256": "54f61bffb714578ac15e1d08e1a68e5a1ecdcc6ae31bda1d19f48c1946b380f1"
+  },
+  {
+    "source": "đồ án của nhóm phàn report slide/Capstone_Project_Overleaf.zip",
+    "destination": "docs/reports/latex/Images/fig5_7.png",
+    "original_sha256": "2adc07600212593e4b4be44e3a717f1ede13b0913251027675b1c8b0818c5c75",
+    "archive_member": "Images/fig5_7.png",
+    "final_sha256": "2adc07600212593e4b4be44e3a717f1ede13b0913251027675b1c8b0818c5c75"
+  },
+  {
+    "source": "đồ án của nhóm phàn report slide/Capstone_Project_Overleaf.zip",
+    "destination": "docs/reports/latex/Images/fig5_8.png",
+    "original_sha256": "d03d46c826bbdc9d6a56aeed5f7c8392e38e30921ff91f75c03bcf420e963051",
+    "archive_member": "Images/fig5_8.png",
+    "final_sha256": "d03d46c826bbdc9d6a56aeed5f7c8392e38e30921ff91f75c03bcf420e963051"
+  },
+  {
+    "source": "đồ án của nhóm phàn report slide/Capstone_Project_Overleaf.zip",
+    "destination": "docs/reports/latex/Images/fig5_9.png",
+    "original_sha256": "8d3dacc1a1f369fdef33aef74d7c27b82b759f3e07b4405472d5fcfc9d583155",
+    "archive_member": "Images/fig5_9.png",
+    "final_sha256": "8d3dacc1a1f369fdef33aef74d7c27b82b759f3e07b4405472d5fcfc9d583155"
+  },
+  {
+    "source": "đồ án của nhóm phàn report slide/Capstone_Project_Overleaf.zip",
+    "destination": "docs/reports/latex/Images/FPT University logo.png",
+    "original_sha256": "be2975e7e968862cf61786d2d357e9c71efe51c2c6d04b92c6d734188adbfd0d",
+    "archive_member": "Images/FPT University logo.png",
+    "final_sha256": "be2975e7e968862cf61786d2d357e9c71efe51c2c6d04b92c6d734188adbfd0d"
+  },
+  {
+    "source": "đồ án của nhóm phàn report slide/Capstone_Project_Overleaf.zip",
+    "destination": "docs/reports/latex/Images/fptu_logo.png",
+    "original_sha256": "b91258db3ef7fc113f108dd0cee496b26eb95b73a4028fa2e0c38b7809ec8bd7",
+    "archive_member": "Images/fptu_logo.png",
+    "final_sha256": "b91258db3ef7fc113f108dd0cee496b26eb95b73a4028fa2e0c38b7809ec8bd7"
+  },
+  {
+    "source": "đồ án của nhóm phàn report slide/Capstone_Project_Overleaf.zip",
+    "destination": "docs/reports/latex/Preamble/abbreviations.tex",
+    "original_sha256": "b7e1dca489d966a903c4ca17479043820c8619beb4f1e4b582860a7773433066",
+    "archive_member": "Preamble/abbreviations.tex",
+    "final_sha256": "b7e1dca489d966a903c4ca17479043820c8619beb4f1e4b582860a7773433066"
+  },
+  {
+    "source": "đồ án của nhóm phàn report slide/Capstone_Project_Overleaf.zip",
+    "destination": "docs/reports/latex/Preamble/abstract.tex",
+    "original_sha256": "dae8c33e3411e654268086775e38881fe2d0a9db797a82c4c3417fea48e39dc8",
+    "archive_member": "Preamble/abstract.tex",
+    "final_sha256": "dae8c33e3411e654268086775e38881fe2d0a9db797a82c4c3417fea48e39dc8"
+  },
+  {
+    "source": "đồ án của nhóm phàn report slide/Capstone_Project_Overleaf.zip",
+    "destination": "docs/reports/latex/Preamble/acknowledgement.tex",
+    "original_sha256": "4ad3569d5ade85445595ac4569af6cec55eb2f7153641c129c323a9322bad2c1",
+    "archive_member": "Preamble/acknowledgement.tex",
+    "final_sha256": "4ad3569d5ade85445595ac4569af6cec55eb2f7153641c129c323a9322bad2c1"
+  },
+  {
+    "source": "đồ án của nhóm phàn report slide/Capstone_Project_Overleaf.zip",
+    "destination": "docs/reports/latex/Preamble/appendices.tex",
+    "original_sha256": "1d4649e76b85a5066e741203f90e8c84695d4661cd5cd582d636779f7a324e39",
+    "archive_member": "Preamble/appendices.tex",
+    "final_sha256": "1d4649e76b85a5066e741203f90e8c84695d4661cd5cd582d636779f7a324e39"
+  },
+  {
+    "source": "đồ án của nhóm phàn report slide/Capstone_Project_Overleaf.zip",
+    "destination": "docs/reports/latex/Preamble/references.tex",
+    "original_sha256": "720f03e7966f21b2a7a3cf4fe7b97d43655fe38b86a37af4564a7c0abbdb5cf5",
+    "archive_member": "Preamble/references.tex",
+    "final_sha256": "720f03e7966f21b2a7a3cf4fe7b97d43655fe38b86a37af4564a7c0abbdb5cf5"
+  },
+  {
+    "source": "đồ án của nhóm phàn report slide/Capstone_Project_Overleaf.zip",
+    "destination": "docs/reports/latex/Preamble/titlepage.tex",
+    "original_sha256": "39542702b547cd2725ed0ac173fda6919f16407419a0f4942027b8324a2e78fd",
+    "archive_member": "Preamble/titlepage.tex",
+    "final_sha256": "39542702b547cd2725ed0ac173fda6919f16407419a0f4942027b8324a2e78fd"
+  },
+  {
+    "source": "đồ án của nhóm phàn report slide/Capstone_Project_Overleaf.zip",
+    "destination": "media/workflow.jpg",
+    "original_sha256": "007d0b4be134d9dcfc27280ddfb37b4ac5a46a453ee69ad9c0d1cbb8fc3615d6",
+    "archive_member": "Images/fig4_2.jpg",
+    "final_sha256": "007d0b4be134d9dcfc27280ddfb37b4ac5a46a453ee69ad9c0d1cbb8fc3615d6"
+  },
+  {
+    "source": "đồ án của nhóm phàn report slide/Capstone_Project_Overleaf.zip",
+    "destination": "media/sensor-wiring.png",
+    "original_sha256": "e609ed97137b8f866d28a347c4b3f02f949bf21e65a5db4685808d07e57e5dd4",
+    "archive_member": "Images/fig5_2.png",
+    "final_sha256": "e609ed97137b8f866d28a347c4b3f02f949bf21e65a5db4685808d07e57e5dd4"
+  },
+  {
+    "source": "đồ án của nhóm phàn report slide/Capstone_Project_Overleaf.zip",
+    "destination": "media/sensor-setup.jpg",
+    "original_sha256": "e77dc5e9080b47b6908014f7f4f1e9c0b20be4aa36ef5dcc99c099fe897676f1",
+    "archive_member": "Images/fig5_3.jpg",
+    "final_sha256": "e77dc5e9080b47b6908014f7f4f1e9c0b20be4aa36ef5dcc99c099fe897676f1"
+  }
+]

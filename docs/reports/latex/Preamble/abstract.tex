@@ -1,0 +1,11 @@
+\chapter*{Abstract}
+\normalsize
+
+Postal item acceptance at the counter currently depends on many manual operations, such as entering customer information, weighing, measuring dimensions and calculating the shipping fee. This makes a transaction take about 6--8 minutes and can lead to data-entry errors. The project therefore builds a system that combines artificial intelligence with low-cost sensors in order to automate part of this workflow.
+
+The system supports item classification, information extraction, dimension measurement, volume estimation and fee calculation. A You Only Look Once version 11 nano model classifies parcels and envelopes and detects the information region on parcels. EasyOCR detects the text regions and a fine-tuned Transformer-based Optical Character Recognition model recognizes Vietnamese handwriting. Parcel dimensions are determined by one of two methods: two webcams combined with the same detector and Canny edge detection, or three ultrasonic sensors connected to an ESP32 microcontroller together with a temperature sensor. Development and evaluation used 439 postal item images collected by the team, 60,247 Vietnamese handwriting samples, 9,216 parcel images and 26,768 hand images annotated with keypoints.
+
+The results show that the item classification model and the information region detection model reach a mean average precision at an intersection over union threshold of 0.50 of 99.50\% and 97.90\% respectively. After fine-tuning, the recognition model achieves a character error rate of 5.39\% and a word error rate of 14.99\%. With the webcam method, the volume errors on three test samples are 0.31\%, 0.19\% and 1.02\%. With the ultrasonic method, the mean absolute error of the three sensors lies between 0.9016 and 1.7445 centimetres. The fee calculation module also matches manual computation in every test case carried out. Overall, combining low-cost components to support postal item acceptance is feasible, but the system still needs to be evaluated in a real post office environment before any conclusion can be drawn about transaction time or manual data entry.
+
+\vspace{0.5cm}
+\noindent\textbf{Keywords:} Postal item acceptance; handwriting recognition; object detection; dimension measurement; shipping fee calculation

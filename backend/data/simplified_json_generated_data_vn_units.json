@@ -1,0 +1,501 @@
+[
+  {
+    "FullName": "Tỉnh Điện Biên",
+    "FullNameEn": "Dien Bien",
+    "Code": "DB",
+    "Wards": []
+  },
+  {
+    "FullName": "Tỉnh Lai Châu",
+    "FullNameEn": "Lai Chau",
+    "Code": "LC",
+    "Wards": []
+  },
+  {
+    "FullName": "Tỉnh Sơn La",
+    "FullNameEn": "Son La",
+    "Code": "SL",
+    "Wards": []
+  },
+  {
+    "FullName": "Tỉnh Lào Cai",
+    "FullNameEn": "Lao Cai",
+    "Code": "LCai",
+    "Wards": []
+  },
+  {
+    "FullName": "Tỉnh Phú Thọ",
+    "FullNameEn": "Phu Tho",
+    "Code": "PT",
+    "Wards": []
+  },
+  {
+    "FullName": "Tỉnh Tuyên Quang",
+    "FullNameEn": "Tuyen Quang",
+    "Code": "TQ",
+    "Wards": []
+  },
+  {
+    "FullName": "Tỉnh Cao Bằng",
+    "FullNameEn": "Cao Bang",
+    "Code": "CB",
+    "Wards": []
+  },
+  {
+    "FullName": "Tỉnh Thái Nguyên",
+    "FullNameEn": "Thai Nguyen",
+    "Code": "TN",
+    "Wards": []
+  },
+  {
+    "FullName": "Tỉnh Lạng Sơn",
+    "FullNameEn": "Lang Son",
+    "Code": "LS",
+    "Wards": []
+  },
+  {
+    "FullName": "Tỉnh Bắc Ninh",
+    "FullNameEn": "Bac Ninh",
+    "Code": "BN",
+    "Wards": []
+  },
+  {
+    "FullName": "Tỉnh Quảng Ninh",
+    "FullNameEn": "Quang Ninh",
+    "Code": "QN",
+    "Wards": [
+      "Xã Quảng La",
+      "Xã Thống Nhất",
+      "Xã Hải Hòa",
+      "Xã Tiên Yên",
+      "Xã Điền Xá",
+      "Xã Đông Ngũ",
+      "Xã Hải Lạng",
+      "Xã Lương Minh",
+      "Xã Kỳ Thượng",
+      "Xã Ba Chẽ",
+      "Xã Quảng Tân",
+      "Xã Đầm Hà",
+      "Xã Quảng Hà",
+      "Xã Đường Hoa",
+      "Xã Quảng Đức",
+      "Xã Hoành Mô",
+      "Xã Lục Hồn",
+      "Xã Bình Liêu",
+      "Xã Hải Sơn",
+      "Xã Hải Ninh",
+      "Xã Vĩnh Thực",
+      "Phường An Sinh",
+      "Phường Đông Triều",
+      "Phường Bình Khê",
+      "Phường Mạo Khê",
+      "Phường Hoàng Quế",
+      "Phường Yên Tử",
+      "Phường Vàng Danh",
+      "Phường Uông Bí",
+      "Phường Đông Mai",
+      "Phường Hiệp Hòa",
+      "Phường Quảng Yên",
+      "Phường Hà An",
+      "Phường Phong Cốc",
+      "Phường Liên Hòa",
+      "Phường Tuần Châu",
+      "Phường Việt Hưng",
+      "Phường Bãi Cháy",
+      "Phường Hà Tu",
+      "Phường Hà Lầm",
+      "Phường Cao Xanh",
+      "Phường Hồng Gai",
+      "Phường Hạ Long",
+      "Phường Hoành Bồ",
+      "Phường Mông Dương",
+      "Phường Quang Hanh",
+      "Phường Cẩm Phả",
+      "Phường Cửa Ông",
+      "Phường Móng Cái 1",
+      "Phường Móng Cái 2",
+      "Phường Móng Cái 3",
+      "Đặc khu Vân Đồn",
+      "Đặc khu Cô Tô"
+    ]
+  },
+  {
+    "FullName": "Thành phố Hải Phòng",
+    "FullNameEn": "Hai Phong",
+    "Code": "HP",
+    "Wards": []
+  },
+  {
+    "FullName": "Tỉnh Hưng Yên",
+    "FullNameEn": "Hung Yen",
+    "Code": "HY",
+    "Wards": []
+  },
+  {
+    "FullName": "Tỉnh Ninh Bình",
+    "FullNameEn": "Ninh Binh",
+    "Code": "NB",
+    "Wards": []
+  },
+  {
+    "FullName": "Thành phố Hà Nội",
+    "FullNameEn": "Ha Noi",
+    "Code": "HN",
+    "Wards": [
+      "Phường Hoàn Kiếm",
+      "Phường Cửa Nam",
+      "Phường Ba Đình",
+      "Phường Ngọc Hà",
+      "Phường Giảng Võ",
+      "Phường Hai Bà Trưng",
+      "Phường Vĩnh Tuy",
+      "Phường Bạch Mai",
+      "Phường Đống Đa",
+      "Phường Kim Liên",
+      "Phường Văn Miếu - Quốc Tử Giám",
+      "Phường Láng",
+      "Phường Ô Chợ Dừa",
+      "Phường Hồng Hà",
+      "Phường Lĩnh Nam",
+      "Phường Hoàng Mai",
+      "Phường Vĩnh Hưng",
+      "Phường Tương Mai",
+      "Phường Định Công",
+      "Phường Hoàng Liệt",
+      "Phường Yên Sở",
+      "Phường Thanh Xuân",
+      "Phường Khương Đình",
+      "Phường Phương Liệt",
+      "Phường Cầu Giấy",
+      "Phường Nghĩa Đô",
+      "Phường Yên Hòa",
+      "Phường Tây Hồ",
+      "Phường Phú Thượng",
+      "Phường Tây Tựu",
+      "Phường Phú Diễn",
+      "Phường Xuân Đỉnh",
+      "Phường Đông Ngạc",
+      "Phường Thượng Cát",
+      "Phường Từ Liêm",
+      "Phường Xuân Phương",
+      "Phường Tây Mỗ",
+      "Phường Đại Mỗ",
+      "Phường Long Biên",
+      "Phường Bồ Đề",
+      "Phường Việt Hưng",
+      "Phường Phúc Lợi",
+      "Phường Hà Đông",
+      "Phường Dương Nội",
+      "Phường Yên Nghĩa",
+      "Phường Phú Lương",
+      "Phường Kiến Hưng",
+      "Xã Thanh Trì",
+      "Xã Đại Thanh",
+      "Xã Nam Phù",
+      "Xã Ngọc Hồi",
+      "Phường Thanh Liệt",
+      "Xã Thượng Phúc",
+      "Xã Thường Tín",
+      "Xã Chương Dương",
+      "Xã Hồng Vân",
+      "Xã Phú Xuyên",
+      "Xã Phượng Dực",
+      "Xã Chuyên Mỹ",
+      "Xã Đại Xuyên",
+      "Xã Thanh Oai",
+      "Xã Bình Minh",
+      "Xã Tam Hưng",
+      "Xã Dân Hòa",
+      "Xã Vân Đình",
+      "Xã Ứng Thiên",
+      "Xã Hòa Xá",
+      "Xã Ứng Hòa",
+      "Xã Mỹ Đức",
+      "Xã Hồng Sơn",
+      "Xã Phúc Sơn",
+      "Xã Hương Sơn",
+      "Phường Chương Mỹ",
+      "Xã Phú Nghĩa",
+      "Xã Xuân Mai",
+      "Xã Trần Phú",
+      "Xã Hòa Phú",
+      "Xã Quảng Bị",
+      "Xã Minh Châu",
+      "Xã Quảng Oai",
+      "Xã Vật Lại",
+      "Xã Cổ Đô",
+      "Xã Bất Bạt",
+      "Xã Suối Hai",
+      "Xã Ba Vì",
+      "Xã Yên Bài",
+      "Phường Sơn Tây",
+      "Phường Tùng Thiện",
+      "Xã Đoài Phương",
+      "Xã Phúc Thọ",
+      "Xã Phúc Lộc",
+      "Xã Hát Môn",
+      "Xã Thạch Thất",
+      "Xã Hạ Bằng",
+      "Xã Tây Phương",
+      "Xã Hòa Lạc",
+      "Xã Yên Xuân",
+      "Xã Quốc Oai",
+      "Xã Hưng Đạo",
+      "Xã Kiều Phú",
+      "Xã Phú Cát",
+      "Xã Hoài Đức",
+      "Xã Dương Hòa",
+      "Xã Sơn Đồng",
+      "Xã An Khánh",
+      "Xã Đan Phượng",
+      "Xã Ô Diên",
+      "Xã Liên Minh",
+      "Xã Gia Lâm",
+      "Xã Thuận An",
+      "Xã Bát Tràng",
+      "Xã Phù Đổng",
+      "Xã Thư Lâm",
+      "Xã Đông Anh",
+      "Xã Phúc Thịnh",
+      "Xã Thiên Lộc",
+      "Xã Vĩnh Thanh",
+      "Xã Mê Linh",
+      "Xã Yên Lãng",
+      "Xã Tiến Thắng",
+      "Xã Quang Minh",
+      "Xã Sóc Sơn",
+      "Xã Đa Phúc",
+      "Xã Nội Bài",
+      "Xã Trung Giã",
+      "Xã Kim Anh"
+    ]
+  },
+  {
+    "FullName": "Tỉnh Thanh Hoá",
+    "FullNameEn": "Thanh Hoa",
+    "Code": "TH",
+    "Wards": []
+  },
+  {
+    "FullName": "Tỉnh Nghệ An",
+    "FullNameEn": "Nghe An",
+    "Code": "NA",
+    "Wards": []
+  },
+  {
+    "FullName": "Tỉnh Hà Tĩnh",
+    "FullNameEn": "Ha Tinh",
+    "Code": "HT",
+    "Wards": []
+  },
+  {
+    "FullName": "Tỉnh An Giang",
+    "FullNameEn": "An Giang",
+    "Code": "AG",
+    "Wards": []
+  },
+  {
+    "FullName": "Tỉnh Bình Dương",
+    "FullNameEn": "Binh Duong",
+    "Code": "BD",
+    "Wards": []
+  },
+  {
+    "FullName": "Tỉnh Bình Phước",
+    "FullNameEn": "Binh Phuoc",
+    "Code": "BP",
+    "Wards": []
+  },
+  {
+    "FullName": "Tỉnh Bà Rịa - Vũng Tàu",
+    "FullNameEn": "Ba Ria Vung Tau",
+    "Code": "BRVT",
+    "Wards": []
+  },
+  {
+    "FullName": "Tỉnh Bạc Liêu",
+    "FullNameEn": "Bac Lieu",
+    "Code": "BL",
+    "Wards": []
+  },
+  {
+    "FullName": "Tỉnh Bến Tre",
+    "FullNameEn": "Ben Tre",
+    "Code": "BT",
+    "Wards": []
+  },
+  {
+    "FullName": "Tỉnh Bình Thuận",
+    "FullNameEn": "Binh Thuan",
+    "Code": "BTh",
+    "Wards": []
+  },
+  {
+    "FullName": "Tỉnh Cà Mau",
+    "FullNameEn": "Ca Mau",
+    "Code": "CM",
+    "Wards": []
+  },
+  {
+    "FullName": "Thành phố Cần Thơ",
+    "FullNameEn": "Can Tho",
+    "Code": "CT",
+    "Wards": []
+  },
+  {
+    "FullName": "Tỉnh Đồng Nai",
+    "FullNameEn": "Dong Nai",
+    "Code": "DN",
+    "Wards": []
+  },
+  {
+    "FullName": "Tỉnh Đồng Tháp",
+    "FullNameEn": "Dong Thap",
+    "Code": "DT",
+    "Wards": []
+  },
+  {
+    "FullName": "Thành phố Hồ Chí Minh",
+    "FullNameEn": "Ho Chi Minh",
+    "Code": "HCM",
+    "Wards": []
+  },
+  {
+    "FullName": "Tỉnh Hậu Giang",
+    "FullNameEn": "Hau Giang",
+    "Code": "HG",
+    "Wards": []
+  },
+  {
+    "FullName": "Tỉnh Kiên Giang",
+    "FullNameEn": "Kien Giang",
+    "Code": "KG",
+    "Wards": []
+  },
+  {
+    "FullName": "Tỉnh Khánh Hoà",
+    "FullNameEn": "Khanh Hoa",
+    "Code": "KH",
+    "Wards": []
+  },
+  {
+    "FullName": "Tỉnh Long An",
+    "FullNameEn": "Long An",
+    "Code": "LA",
+    "Wards": []
+  },
+  {
+    "FullName": "Tỉnh Lâm Đồng",
+    "FullNameEn": "Lam Dong",
+    "Code": "LD",
+    "Wards": []
+  },
+  {
+    "FullName": "Tỉnh Ninh Thuận",
+    "FullNameEn": "Ninh Thuan",
+    "Code": "NTh",
+    "Wards": []
+  },
+  {
+    "FullName": "Tỉnh Sóc Trăng",
+    "FullNameEn": "Soc Trang",
+    "Code": "ST",
+    "Wards": []
+  },
+  {
+    "FullName": "Tỉnh Tây Ninh",
+    "FullNameEn": "Tay Ninh",
+    "Code": "TNinh",
+    "Wards": []
+  },
+  {
+    "FullName": "Tỉnh Tiền Giang",
+    "FullNameEn": "Tien Giang",
+    "Code": "TG",
+    "Wards": []
+  },
+  {
+    "FullName": "Tỉnh Trà Vinh",
+    "FullNameEn": "Tra Vinh",
+    "Code": "TV",
+    "Wards": []
+  },
+  {
+    "FullName": "Tỉnh Vĩnh Long",
+    "FullNameEn": "Vinh Long",
+    "Code": "VL",
+    "Wards": []
+  },
+  {
+    "FullName": "Tỉnh Đắk Lắk",
+    "FullNameEn": "Dak Lak",
+    "Code": "DL",
+    "Wards": []
+  },
+  {
+    "FullName": "Tỉnh Đắk Nông",
+    "FullNameEn": "Dak Nong",
+    "Code": "DN",
+    "Wards": []
+  },
+  {
+    "FullName": "Tỉnh Bình Định",
+    "FullNameEn": "Binh Dinh",
+    "Code": "BiD",
+    "Wards": []
+  },
+  {
+    "FullName": "Thành phố Đà Nẵng",
+    "FullNameEn": "Da Nang",
+    "Code": "DN",
+    "Wards": []
+  },
+  {
+    "FullName": "Tỉnh Gia Lai",
+    "FullNameEn": "Gia Lai",
+    "Code": "GL",
+    "Wards": []
+  },
+  {
+    "FullName": "Tỉnh Thừa Thiên Huế",
+    "FullNameEn": "Thua Thien Hue",
+    "Code": "TTH",
+    "Wards": []
+  },
+  {
+    "FullName": "Tỉnh Kon Tum",
+    "FullNameEn": "Kon Tum",
+    "Code": "KT",
+    "Wards": []
+  },
+  {
+    "FullName": "Tỉnh Phú Yên",
+    "FullNameEn": "Phu Yen",
+    "Code": "PY",
+    "Wards": []
+  },
+  {
+    "FullName": "Tỉnh Quảng Trị",
+    "FullNameEn": "Quang Tri",
+    "Code": "QTri",
+    "Wards": []
+  },
+  {
+    "FullName": "Tỉnh Quảng Nam",
+    "FullNameEn": "Quang Nam",
+    "Code": "QNam",
+    "Wards": []
+  },
+  {
+    "FullName": "Tỉnh Quảng Ngãi",
+    "FullNameEn": "Quang Ngai",
+    "Code": "QNgai",
+    "Wards": []
+  },
+  {
+    "FullName": "Tỉnh Quảng Bình",
+    "FullNameEn": "Quang Binh",
+    "Code": "QB",
+    "Wards": []
+  }
+]

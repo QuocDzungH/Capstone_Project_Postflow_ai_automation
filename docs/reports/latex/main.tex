@@ -1,0 +1,175 @@
+
+\documentclass[12pt,a4paper]{report}
+
+% ---------- Encoding & Language ----------
+% The report is written in English, but a small number of Vietnamese strings are
+% unavoidable: source titles in references.bib, province names used by the fee
+% module, and the OCR error examples in Chapter 5 (whose whole point is a
+% diacritic error). T1 cannot represent those characters, so T5 (vntex) is
+% loaded alongside it for pdfLaTeX. If the compiler is XeLaTeX or LuaLaTeX,
+% fontspec is used instead. Everything else is unchanged from the template.
+\usepackage{iftex}
+% ---------- Times New Roman, everywhere ----------
+% Text/sans/mono all use TeX Gyre Termes, the metric-compatible Times New Roman
+% clone shipped with TeX Live; unlike newtx/T1 it also covers the Vietnamese
+% characters in the reference list and the OCR examples. mathptmx is loaded
+% BEFORE fontspec so that formulas are set in Times too, while \setmainfont
+% still wins for running text. Requires XeLaTeX.
+\ifPDFTeX
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1,T5]{fontenc}
+  \AtBeginDocument{\typeout{^^J*** Compile with XeLaTeX to get Times New Roman. ***^^J}}
+\else
+  \usepackage{mathptmx}          % Times math
+  \usepackage{fontspec}
+  \setmainfont{TeX Gyre Termes}
+  \setsansfont{TeX Gyre Termes}
+  \setmonofont{TeX Gyre Termes}  % \texttt{} in Times as well, not a typewriter face
+\fi
+\usepackage[english]{babel}
+\addto\captionsenglish{\renewcommand{\contentsname}{Table of Contents}}
+
+% ---------- Page Geometry & Spacing ----------
+\usepackage{geometry}
+\geometry{margin=1in}
+\usepackage{setspace}
+\onehalfspacing
+% Uniform inter-word spacing. By default LaTeX inserts a wider space after a
+% sentence-ending period, which at 12pt with 1.5 line spacing reads as an
+% uneven gap in the middle of a line.
+\frenchspacing
+
+% ---------- Figures, Tables, Math ----------
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{amsmath, amssymb}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{ragged2e}
+\usepackage{algorithm}
+\usepackage{algpseudocode} % If using algorithmic pseudocode syntax
+
+\setlist[itemize]{nosep,leftmargin=*}    % compact lists inside cells
+\newcolumntype{R}[1]{>{\raggedright\arraybackslash}p{#1}} % ragged-right wrapped column
+% Plain \raggedright (infinite rightskip) rather than ragged2e's \RaggedRight:
+% with hyphenation disabled globally, the finite stretch of \RaggedRight makes
+% every short cell report "Underfull \\hbox (badness 10000)".
+\setlength{\arrayrulewidth}{0.4pt}       % border thickness (adjust if needed)
+\renewcommand{\arraystretch}{1.05}       % row height (optional)
+
+% ---------- Lists & Formatting ----------
+\usepackage{enumitem}
+\setlist{leftmargin=2em}
+\usepackage{xurl} % allow long URLs in the bibliography to break across lines
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    citecolor=blue,
+    urlcolor=blue,
+    pdfauthor={Hoang Quoc Dung, Do Thanh Hung, Le Huy Anh, Bui Nhat Minh},
+    pdftitle={Designing an AI-Integrated Automation System for Post Offices},
+}
+
+% ---------- Typography & Hyphenation ----------
+% Font expansion is a pdfTeX-only feature; XeLaTeX aborts on it.
+\ifPDFTeX
+  \usepackage[protrusion=true,expansion=true]{microtype}
+  \microtypesetup{verbose=silent}
+\else
+  \usepackage[protrusion=true,expansion=false]{microtype}
+\fi
+% Hyphenation is left ON. The template's \usepackage[none]{hyphenat} plus \sloppy
+% is what produced the very wide, uneven word gaps in justified paragraphs:
+% with no legal break point inside a long word, TeX can only stretch the spaces.
+% A small \emergencystretch handles the few remaining hard lines without
+% resorting to \sloppy.
+\setlength{\emergencystretch}{2em}
+\hyphenpenalty=1000
+\tolerance=1500
+
+% ---------- Heading depth ----------
+% Numbering and the table of contents stop at section level (1, 1.1, 1.2, ...).
+% Subsections are still typeset as unnumbered headings. Set both counters to 2
+% to restore the 1.1.1 numbering used by the original template.
+\setcounter{secnumdepth}{1}
+\setcounter{tocdepth}{1}
+
+% ---------- Custom Commands ----------
+\newcommand{\todo}[1]{\textbf{\color{red}[TODO: #1]}}
+
+% ---------- frame of title page ----------
+\usepackage{tikz}
+\newcommand{\pageframe}{%
+  \begin{tikzpicture}[remember picture,overlay]
+    \draw[line width=0.8pt]
+      ([xshift=1cm,yshift=-1cm]current page.north west)
+      rectangle
+      ([xshift=-1cm,yshift=1cm]current page.south east);
+  \end{tikzpicture}%
+  \begin{tikzpicture}[remember picture,overlay]
+    \draw[line width=0.8pt]
+      ([xshift=1.1cm,yshift=-1.1cm]current page.north west)
+      rectangle
+      ([xshift=-1.1cm,yshift=1.1cm]current page.south east);
+  \end{tikzpicture}%
+}
+
+\begin{document}
+
+\input{Preamble/titlepage}
+
+\pagenumbering{roman}
+\clearpage\phantomsection\addcontentsline{toc}{chapter}{Acknowledgements}
+\input{Preamble/acknowledgement}
+\clearpage\phantomsection\addcontentsline{toc}{chapter}{Abstract}
+\input{Preamble/abstract}
+
+\clearpage\phantomsection\addcontentsline{toc}{chapter}{Table of Contents}
+\tableofcontents
+\clearpage
+\phantomsection\addcontentsline{toc}{chapter}{List of Tables}
+\listoftables
+\clearpage
+\phantomsection\addcontentsline{toc}{chapter}{List of Figures}
+\listoffigures
+\clearpage
+\clearpage\phantomsection\addcontentsline{toc}{chapter}{List of Abbreviations and Acronyms}
+\input{Preamble/abbreviations}
+\clearpage
+\pagenumbering{arabic}
+
+\input{Chapters/Chapter 01 - Introduction}
+\input{Chapters/Chapter 02 - Theoretical Background}
+\input{Chapters/Chapter 03 - Data processing}
+\input{Chapters/Chapter 04 - Methodology}
+\input{Chapters/Chapter 05 - Result analysis}
+\input{Chapters/Chapter 06 - Conclusion}
+% ---------- References ----------
+% Heading of the reference list, followed by a note on the citation conventions
+% used: how Vietnamese author names are written, and which entries are software
+% or product documentation rather than peer-reviewed publications.
+\renewcommand{\bibname}{References\\[0.8em]
+  \normalfont\normalsize\mdseries
+  \begin{minipage}{\textwidth}\setstretch{1.2}\noindent
+  \textit{Conventions.} The list is divided into three groups by source type, so
+  that peer-reviewed work is not presented as equivalent to product
+  documentation. Group~A contains peer-reviewed publications and textbooks.
+  Group~B contains software documentation, model cards, public datasets and
+  hardware datasheets; these are cited to identify the tools and data used, not
+  as scientific evidence. Group~C contains unpublished internal documents of
+  Quang Ninh Provincial Post Office; they are not publicly available, and the
+  business rules and tariff tables cited from them are reproduced in
+  Appendices~A and~B. Numbering is continuous across the three groups. Vietnamese
+  author names are given in full, in the order used by the cited source, rather
+  than abbreviated to initials.
+  \end{minipage}}
+\clearpage\phantomsection\addcontentsline{toc}{chapter}{References}
+\input{Preamble/references}
+
+\input{Preamble/appendices}
+
+\end{document}

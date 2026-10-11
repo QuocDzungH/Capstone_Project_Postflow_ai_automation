@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PostFlow - Model Demo</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f5f5f5;
+      padding: 20px;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 8px;
+      padding: 30px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #333;
+    }
+    .section {
+      margin-bottom: 30px;
+      padding: 20px;
+      border: 2px solid #e0e0e0;
+      border-radius: 6px;
+    }
+    .section h2 {
+      color: #2196F3;
+      margin-bottom: 15px;
+      font-size: 18px;
+    }
+    .input-group {
+      margin-bottom: 15px;
+    }
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: #555;
+    }
+    input[type="file"],
+    input[type="text"],
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 14px;
+      font-family: monospace;
+    }
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+    button {
+      background: #2196F3;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 4px;
+      font-size: 14px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background: #1976D2;
+    }
+    button:active {
+      background: #1565C0;
+    }
+    .result {
+      margin-top: 15px;
+      padding: 15px;
+      background: #f9f9f9;
+      border: 1px solid #e0e0e0;
+      border-radius: 4px;
+      max-height: 400px;
+      overflow-y: auto;
+    }
+    .result.success {
+      background: #e8f5e9;
+      border-color: #4caf50;
+    }
+    .result.error {
+      background: #ffebee;
+      border-color: #f44336;
+    }
+    .result-title {
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #333;
+    }
+    .loading {
+      color: #ff9800;
+      font-weight: bold;
+    }
+    code {
+      background: #f0f0f0;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-family: monospace;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>📮 PostFlow - Model Demo</h1>
+
+    <!-- 1. Process Document -->
+    <div class="section">
+      <h2>1️⃣ Process Document (Classify + Crop)</h2>
+      <p style="color: #666; margin-bottom: 15px;">Upload postal form → Classify (Thư từ/Hàng hóa) + Detect info region</p>
+      <div class="input-group">
+        <label>Upload image:</label>
+        <input type="file" id="processDocFile" accept="image/*">
+      </div>
+      <button onclick="processDocument()">🔍 Process Document</button>
+      <div id="processDocResult"></div>
+    </div>
+
+    <!-- 2. Detect Dimensions (2-Camera) -->
+    <div class="section">
+      <h2>2️⃣ Detect Dimensions - 2 Camera</h2>
+      <p style="color: #666; margin-bottom: 15px;">Upload 2 images from different angles → Measure L×W×H</p>
+      <div class="input-group">
+        <label>Camera 1 image:</label>
+        <input type="file" id="dimCam1File" accept="image/*">
+      </div>
+      <div class="input-group">
+        <label>Camera 2 image:</label>
+        <input type="file" id="dimCam2File" accept="image/*">
+      </div>
+      <div class="input-group">
+        <label>Reference mode:</label>
+        <select id="refMode" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
+          <option value="VERTICAL">VERTICAL</option>
+          <option value="HORIZONTAL">HORIZONTAL</option>
+        </select>
+      </div>
+      <button onclick="detectDualCamera()">📷 Detect (2-Camera)</button>
+      <div id="dimCamResult"></div>
+    </div>
+
+    <!-- 3. Detect Dimensions (ESP32 Sensor) -->
+    <div class="section">
+      <h2>3️⃣ Detect Dimensions - ESP32 Sensor</h2>
+      <p style="color: #666; margin-bottom: 15px;">Connect to ESP32 → Read 3 sensors → Get L×W×H</p>
+      <div class="input-group">
+        <label>ESP32 URL:</label>
+        <input type="text" id="esp32Url" value="http://esp32-buudien.local/distance" placeholder="http://esp32-buudien.local/distance">
+      </div>
+      <button onclick="detectESP32()">📡 Detect (ESP32)</button>
+      <div id="dimSensorResult"></div>
+    </div>
+
+    <!-- 4. Calculate Shipping Quote -->
+    <div class="section">
+      <h2>4️⃣ Calculate Shipping Quote</h2>
+      <p style="color: #666; margin-bottom: 15px;">Input dimensions + weight → Calculate shipping fee</p>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+        <div class="input-group">
+          <label>Service:</label>
+          <select id="quoteService" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
+            <option value="ETN011">Hàng hoá</option>
+            <option value="ETN013">Hoả tốc</option>
+            <option value="CTN001">Tiêu chuẩn</option>
+            <option value="ETN001">Tài liệu</option>
+            <option value="LETTER">Thư từ</option>
+          </select>
+        </div>
+        <div class="input-group">
+          <label>Origin:</label>
+          <input type="text" id="quoteOrigin" value="Hà Nội" placeholder="Hà Nội">
+        </div>
+        <div class="input-group">
+          <label>Destination:</label>
+          <input type="text" id="quoteDest" value="TP. Hồ Chí Minh" placeholder="TP. Hồ Chí Minh">
+        </div>
+        <div class="input-group">
+          <label>Weight (kg):</label>
+          <input type="number" id="quoteWeight" value="2.5" step="0.1" placeholder="2.5">
+        </div>
+        <div class="input-group">
+          <label>Length (cm):</label>
+          <input type="number" id="quoteLength" value="30" step="0.1" placeholder="30">
+        </div>
+        <div class="input-group">
+          <label>Width (cm):</label>
+          <input type="number" id="quoteWidth" value="20" step="0.1" placeholder="20">
+        </div>
+        <div class="input-group">
+          <label>Height (cm):</label>
+          <input type="number" id="quoteHeight" value="15" step="0.1" placeholder="15">
+        </div>
+      </div>
+      <button onclick="getQuote()">💰 Get Quote</button>
+      <div id="quoteResult"></div>
+    </div>
+
+  </div>
+
+  <script>
+    const API = 'http://127.0.0.1:8000';
+
+    async function showResult(elementId, title, data, isError = false) {
+      const el = document.getElementById(elementId);
+      el.className = `result ${isError ? 'error' : 'success'}`;
+      el.innerHTML = `<div class="result-title">${title}</div><pre>${JSON.stringify(data, null, 2)}</pre>`;
+    }
+
+    async function processDocument() {
+      const file = document.getElementById('processDocFile').files[0];
+      if (!file) return alert('Select image');
+
+      const result = document.getElementById('processDocResult');
+      result.className = 'result';
+      result.innerHTML = '<div class="loading">⏳ Processing...</div>';
+
+      try {
+        const formData = new FormData();
+        formData.append('file', file);
+        const res = await fetch(`${API}/process-document`, {method: 'POST', body: formData});
+        const data = await res.json();
+        await showResult('processDocResult', '✅ Result', data, !res.ok);
+      } catch (e) {
+        await showResult('processDocResult', '❌ Error', {error: e.message}, true);
+      }
+    }
+
+    async function detectDualCamera() {
+      const file1 = document.getElementById('dimCam1File').files[0];
+      const file2 = document.getElementById('dimCam2File').files[0];
+      if (!file1 || !file2) return alert('Select both images');
+
+      const result = document.getElementById('dimCamResult');
+      result.className = 'result';
+      result.innerHTML = '<div class="loading">⏳ Detecting...</div>';
+
+      try {
+        const formData = new FormData();
+        formData.append('file_cam1', file1);
+        formData.append('file_cam2', file2);
+        formData.append('reference_mode', document.getElementById('refMode').value);
+        const res = await fetch(`${API}/detect-dimensions-dual`, {method: 'POST', body: formData});
+        const data = await res.json();
+        await showResult('dimCamResult', '✅ Result', data, !res.ok);
+      } catch (e) {
+        await showResult('dimCamResult', '❌ Error', {error: e.message}, true);
+      }
+    }
+
+    async function detectESP32() {
+      const url = document.getElementById('esp32Url').value;
+      if (!url) return alert('Enter ESP32 URL');
+
+      const result = document.getElementById('dimSensorResult');
+      result.className = 'result';
+      result.innerHTML = '<div class="loading">⏳ Reading sensors...</div>';
+
+      try {
+        const res = await fetch(`${API}/detect-dimensions-esp32?esp32_url=${encodeURIComponent(url)}`);
+        const data = await res.json();
+        await showResult('dimSensorResult', '✅ Result', data, !res.ok);
+      } catch (e) {
+        await showResult('dimSensorResult', '❌ Error', {error: e.message}, true);
+      }
+    }
+
+    async function getQuote() {
+      const data = {
+        service: document.getElementById('quoteService').value,
+        origin: document.getElementById('quoteOrigin').value,
+        destination: document.getElementById('quoteDest').value,
+        actual_weight_kg: parseFloat(document.getElementById('quoteWeight').value),
+        length_cm: parseFloat(document.getElementById('quoteLength').value),
+        width_cm: parseFloat(document.getElementById('quoteWidth').value),
+        height_cm: parseFloat(document.getElementById('quoteHeight').value)
+      };
+
+      const result = document.getElementById('quoteResult');
+      result.className = 'result';
+      result.innerHTML = '<div class="loading">⏳ Calculating...</div>';
+
+      try {
+        const res = await fetch(`${API}/quotes`, {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify(data)
+        });
+        const resData = await res.json();
+        await showResult('quoteResult', '✅ Result', resData, !res.ok);
+      } catch (e) {
+        await showResult('quoteResult', '❌ Error', {error: e.message}, true);
+      }
+    }
+  </script>
+</body>
+</html>
